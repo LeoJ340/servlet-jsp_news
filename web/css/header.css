@@ -1,0 +1,12 @@
+header{
+    width: 100%;
+    max-height: 50px;
+    color: rgba(255,255,255,.7)!important;
+}
+header a{
+    padding: 5px;
+}
+header a:hover{
+    color: white;
+    text-decoration: none;
+}

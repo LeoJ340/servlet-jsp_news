@@ -1,0 +1,10 @@
+.main{
+    font-size: 16px;
+}
+.main .title{
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+.news{
+    border-top: 3px solid blue;
+}
