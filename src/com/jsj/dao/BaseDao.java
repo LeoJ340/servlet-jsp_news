@@ -1,16 +1,27 @@
 package com.jsj.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface BaseDao<T> {
 
-    List<T> getAll();
+    default List<T> getAll() throws SQLException {
+        return null;
+    }
 
-    T getById(Integer id);
+    default T getById(Integer id){
+        return null;
+    }
 
-    int insert(T t);
+    default int insert(T t) throws SQLException {
+        return 0;
+    }
 
-    int deleteById(Integer id);
+    default int deleteById(Integer id){
+        return 0;
+    }
 
-    int update(T t);
+    default int update(T t) throws SQLException {
+        return 0;
+    }
 }

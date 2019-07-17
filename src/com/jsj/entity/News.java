@@ -10,9 +10,11 @@ public class News {
 
     private Date time;
 
-    private Integer author;
+    private String author;
 
     private String content;
+
+    private String cate;
 
     public Integer getId() {
         return id;
@@ -38,11 +40,11 @@ public class News {
         this.time = time;
     }
 
-    public Integer getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Integer author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -54,6 +56,14 @@ public class News {
         this.content = content;
     }
 
+    public String getCate() {
+        return cate;
+    }
+
+    public void setCate(String cate) {
+        this.cate = cate;
+    }
+
     @Override
     public String toString() {
         return "News{" +
@@ -62,6 +72,7 @@ public class News {
                 ", time=" + time +
                 ", author=" + author +
                 ", content='" + content + '\'' +
+                ", cate='" + cate + '\'' +
                 '}';
     }
 }

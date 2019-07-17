@@ -2,15 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>公用页头</title>
 </head>
 <body>
 <header class="bg-dark">
     <div class="container d-flex">
         <a href="#">首页</a>
         <div class="flex-grow-1 d-flex justify-content-end">
-            <a href="#">登录</a>
-            <a href="#">注册</a>
+            <a href="login.jsp">登录</a>
+            <a href="register.jsp">注册</a>
         </div>
     </div>
 </header>

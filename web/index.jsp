@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
+  <%@include file="header.jsp"%>
   <div class="container mt-5 main">
     <div class="d-flex flex-wrap">
       <div class="news w-50 p-2">

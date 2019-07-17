@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-<form class="form-signin">
+<form class="form-signin" method="post" action="${pageContext.request.contextPath}/login">
     <div class="text-center mb-4">
         <img class="mb-5" src="images/logo.webp" alt="" width="200">
         <h1 class="h3 mb-3 font-weight-normal">用户登录</h1>
