@@ -16,4 +16,9 @@ public class NewsServiceImpl implements NewsService {
     public List<News> getNewsListByCate(Integer cateId) throws SQLException {
         return newsDao.getNewsListByCate(cateId);
     }
+
+    @Override
+    public News getNewsById(Integer id) throws SQLException {
+        return newsDao.getById(id);
+    }
 }

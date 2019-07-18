@@ -9,4 +9,5 @@ public interface NewsService {
 
     List<News> getNewsListByCate(Integer cateId) throws SQLException;
 
+    News getNewsById(Integer id) throws SQLException;
 }
