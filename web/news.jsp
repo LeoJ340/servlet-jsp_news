@@ -8,14 +8,15 @@
     <link rel="stylesheet" type="text/css" href="css/header.css">
 </head>
 <body>
+<%@include file="header.jsp"%>
 <div class="container mt-1 p-0 main">
     <div class="d-flex flex-wrap flex-column">
-        <h1 class="text-center mb-3">新闻标题</h1>
+        <h1 class="text-center mb-3">${requestScope.news.title}</h1>
         <div class="d-flex justify-content-end mb-3">
-            <span>作者发表于2019-2-9</span>
+            <span>${requestScope.news.author}发表于${requestScope.news.time}</span>
         </div>
         <p>
-            新闻内容
+            ${requestScope.news.content}
         </p>
     </div>
 </div>

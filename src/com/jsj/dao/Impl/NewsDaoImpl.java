@@ -13,25 +13,33 @@ import java.util.List;
 
 public class NewsDaoImpl implements NewsDao {
 
+    /**
+     *
+     * @param cateId
+     * @return 指定分类id的新闻列表
+     * @throws SQLException
+     */
     @Override
-    public List<News> getNewsByCate(String cateName) throws SQLException {
+    public List<News> getNewsListByCate(Integer cateId) throws SQLException {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         Connection connection = dataSource.getConnection();
-        String sql = "select * from news where cate = ?";
+        String sql = "select * from news where cate_id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1,cateName);
+        preparedStatement.setInt(1,cateId);
         ResultSet resultSet = preparedStatement.executeQuery();
         List<News> newsList = new ArrayList<>();
         while (resultSet.next()){
             News news = new News();
             news.setId(resultSet.getInt("id"));
+            news.setCateId(resultSet.getInt("cate_id"));
             news.setTitle(resultSet.getString("title"));
             news.setAuthor(resultSet.getString("author"));
             news.setTime(resultSet.getDate("time"));
             news.setContent(resultSet.getString("content"));
-            news.setCate(resultSet.getString("cate"));
             newsList.add(news);
         }
+        connection.close();
         return newsList;
     }
+
 }

@@ -2,11 +2,24 @@ package com.jsj.entity;
 
 import java.util.List;
 
-public class CateListVm {
+/**
+ * 新闻分类所属的新闻列表
+ */
+public class NewsVm {
+
+    private Integer cateId;
 
     private String name;
 
     private List<News> news;
+
+    public Integer getCateId() {
+        return cateId;
+    }
+
+    public void setCateId(Integer cateId) {
+        this.cateId = cateId;
+    }
 
     public String getName() {
         return name;
@@ -26,8 +39,9 @@ public class CateListVm {
 
     @Override
     public String toString() {
-        return "CateListVm{" +
-                "name='" + name + '\'' +
+        return "NewsVm{" +
+                "cateId=" + cateId +
+                ", name='" + name + '\'' +
                 ", news=" + news +
                 '}';
     }

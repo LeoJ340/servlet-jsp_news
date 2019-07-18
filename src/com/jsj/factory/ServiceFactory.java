@@ -1,6 +1,7 @@
 package com.jsj.factory;
 
 import com.jsj.service.NewsCateService;
+import com.jsj.service.NewsService;
 import com.jsj.service.UserService;
 
 import java.io.InputStream;
@@ -49,6 +50,16 @@ public class ServiceFactory {
             e.printStackTrace();
         }
         return newsCateService;
+    }
+
+    public static NewsService getNewsService(){
+        NewsService newsService = null;
+        try {
+            newsService = (NewsService) Class.forName(properties.getProperty("NewsService")).newInstance();
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return newsService;
     }
 
 }

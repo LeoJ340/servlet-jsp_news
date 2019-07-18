@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -12,62 +13,24 @@
   <%@include file="header.jsp"%>
   <div class="container mt-5 main">
     <div class="d-flex flex-wrap">
-      <div class="news w-50 p-2">
-        <div class="d-flex">
-          <h3>分类</h3>
-          <div class="flex-grow-1 d-flex justify-content-end">
-            <a href="#">更多</a>
+      <c:forEach items="${sessionScope.newsVms}" var="newsVm">
+        <div class="news w-50 p-2">
+          <div class="d-flex">
+            <h3>${newsVm.name}</h3>
+            <div class="flex-grow-1 d-flex justify-content-end">
+              <a href="${pageContext.request.contextPath}/newsCate?cateId=${newsVm.cateId}">更多</a>
+            </div>
           </div>
+          <ul>
+            <c:forEach items="${newsVm.news}" var="news">
+              <li class="d-flex">
+                <a class="title">${news.title}</a>
+                <span class="flex-grow-1 d-flex justify-content-end">${news.time}</span>
+              </li>
+            </c:forEach>
+          </ul>
         </div>
-        <ul>
-          <li class="d-flex">
-            <a class="title">近海的素材赛格静安寺刚从啊世界杯</a>
-            <span class="flex-grow-1 d-flex justify-content-end">2019-2-5</span>
-          </li>
-          <li class="d-flex">
-            <a class="title">近海的素材赛格静安寺刚从啊世界杯</a>
-            <span class="flex-grow-1 d-flex justify-content-end">2019-2-5</span>
-          </li>
-        </ul>
-      </div>
-      <div class="news w-50 p-2">
-        <div class="d-flex">
-          <h3>分类</h3>
-          <div class="flex-grow-1 d-flex justify-content-end">
-            <a href="#">更多</a>
-          </div>
-        </div>
-        <ul>
-          <li class="d-flex">
-            <a class="title">近海的素材赛格静安寺刚从啊世界杯</a>
-            <span class="flex-grow-1 d-flex justify-content-end">2019-2-5</span>
-          </li>
-          <li class="d-flex">
-            <a class="title">近海的素材赛格静安寺刚从啊世界杯</a>
-            <span class="flex-grow-1 d-flex justify-content-end">2019-2-5</span>
-          </li>
-        </ul>
-      </div>
-      <div class="news w-50 p-2">
-        <div class="d-flex">
-          <h3>分类</h3>
-          <div class="flex-grow-1 d-flex justify-content-end">
-            <a href="#">更多</a>
-          </div>
-        </div>
-        <ul>
-          <li class="d-flex">
-            <a class="title">近海的素材赛格静安寺刚从啊世界杯</a>
-            <span class="flex-grow-1 d-flex justify-content-end">2019-2-5</span>
-          </li>
-          <li class="d-flex">
-            <a class="title">近海的素材赛格静安寺刚从啊世界杯</a>
-            <span class="flex-grow-1 d-flex justify-content-end">2019-2-5</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+      </c:forEach>
   <script src="js/jquery.min.js"></script>
   <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
   </body>

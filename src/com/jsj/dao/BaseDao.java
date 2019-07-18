@@ -9,7 +9,7 @@ public interface BaseDao<T> {
         return null;
     }
 
-    default T getById(Integer id){
+    default T getById(Integer id) throws SQLException {
         return null;
     }
 

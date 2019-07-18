@@ -51,6 +51,7 @@ public class UserDaoImpl implements UserDao {
             user.setEmail(resultSet.getString("email"));
             user.setTelNumber(resultSet.getString("tel_number"));
         }
+        connection.close();
         return user;
     }
 

@@ -28,7 +28,7 @@
     <ul class="container navbar-nav">
         <c:forEach items="${sessionScope.cates}" var="cate">
             <li class="nav-item">
-                <a class="nav-link" href="#" >
+                <a class="nav-link" href="${pageContext.request.contextPath}/newsCate?cateId=${cate.id}" >
                     ${cate.name}
                 </a>
             </li>

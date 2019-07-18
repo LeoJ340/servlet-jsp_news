@@ -6,6 +6,8 @@ public class News {
 
     private Integer id;
 
+    private Integer cateId;
+
     private String title;
 
     private Date time;
@@ -14,7 +16,6 @@ public class News {
 
     private String content;
 
-    private String cate;
 
     public Integer getId() {
         return id;
@@ -22,6 +23,14 @@ public class News {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getCateId() {
+        return cateId;
+    }
+
+    public void setCateId(Integer cateId) {
+        this.cateId = cateId;
     }
 
     public String getTitle() {
@@ -56,23 +65,15 @@ public class News {
         this.content = content;
     }
 
-    public String getCate() {
-        return cate;
-    }
-
-    public void setCate(String cate) {
-        this.cate = cate;
-    }
-
     @Override
     public String toString() {
         return "News{" +
                 "id=" + id +
+                ", cateId=" + cateId +
                 ", title='" + title + '\'' +
                 ", time=" + time +
-                ", author=" + author +
+                ", author='" + author + '\'' +
                 ", content='" + content + '\'' +
-                ", cate='" + cate + '\'' +
                 '}';
     }
 }
