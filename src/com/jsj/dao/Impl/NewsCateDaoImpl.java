@@ -17,7 +17,7 @@ public class NewsCateDaoImpl implements NewsCateDao {
     public List<NewsCate> getAll() throws SQLException {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         Connection connection = dataSource.getConnection();
-        String sql = "select * from cate";
+        String sql = "select * from news_cate";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
         List<NewsCate> newsCateList = new ArrayList<>();

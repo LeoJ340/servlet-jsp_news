@@ -3,7 +3,7 @@ header{
     max-height: 50px;
     color: rgba(255,255,255,.7)!important;
 }
-header a{
+header a,header span{
     padding: 5px;
 }
 header a:hover{

@@ -6,8 +6,6 @@
     <title>Title</title>
 </head>
 <body>
-<%
-    request.getRequestDispatcher("/index").forward(request,response);
-%>
+<jsp:forward page="/index"/>
 </body>
 </html>

@@ -1,50 +1,38 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
+    <title></title>
 </head>
 <body>
 <header class="bg-dark">
     <div class="container d-flex">
-        <a href="#">首页</a>
+        <a href="index.jsp">首页</a>
         <div class="flex-grow-1 d-flex justify-content-end">
-            <a href="login.jsp">登录</a>
-            <a href="register.jsp">注册</a>
+            <c:choose>
+                <c:when test="${empty sessionScope.status}">
+                    <a href="login.jsp">登录</a>
+                    <a href="register.jsp">注册</a>
+                </c:when>
+                <c:otherwise>
+                    <span>欢迎您！尊敬的用户</span>
+                    <a href="#">${sessionScope.user.username}</a>
+                    <a href="${pageContext.request.contextPath}/logout">注销</a>
+                </c:otherwise>
+            </c:choose>
         </div>
     </div>
 </header>
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
     <ul class="container navbar-nav">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                下拉菜单
-            </a>
-            <div class="dropdown-menu" aria-labelledby="0">
-                <a class="dropdown-item" href="#">1</a>
-                <a class="dropdown-item" href="#">2</a>
-                <a class="dropdown-item" href="#">3</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                下拉菜单
-            </a>
-            <div class="dropdown-menu" aria-labelledby="1">
-                <a class="dropdown-item" href="#">1</a>
-                <a class="dropdown-item" href="#">2</a>
-                <a class="dropdown-item" href="#">3</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                下拉菜单
-            </a>
-            <div class="dropdown-menu" aria-labelledby="2">
-                <a class="dropdown-item" href="#">1</a>
-                <a class="dropdown-item" href="#">2</a>
-                <a class="dropdown-item" href="#">3</a>
-            </div>
-        </li>
+        <c:forEach items="${sessionScope.cates}" var="cate">
+            <li class="nav-item">
+                <a class="nav-link" href="#" >
+                    ${cate.name}
+                </a>
+            </li>
+        </c:forEach>
     </ul>
 </nav>
 </body>

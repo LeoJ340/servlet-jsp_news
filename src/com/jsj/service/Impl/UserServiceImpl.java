@@ -21,5 +21,4 @@ public class UserServiceImpl implements UserService {
         return userDao.getUserByPassword(username,password);
     }
 
-
 }

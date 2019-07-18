@@ -16,12 +16,12 @@
 
     <div class="form-label-group">
         <label for="username">用户名：</label>
-        <input type="text" id="username" class="form-control" placeholder="请输入用户名">
+        <input type="text" id="username" class="form-control" placeholder="请输入用户名" name="username">
     </div>
 
     <div class="form-label-group">
         <label for="password">密码：</label>
-        <input type="password" id="password" class="form-control" placeholder="请输入密码">
+        <input type="password" id="password" class="form-control" placeholder="请输入密码" name="password">
     </div>
 
     <div class="checkbox mb-3">
