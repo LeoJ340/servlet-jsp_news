@@ -58,7 +58,7 @@ public class UserDaoImpl implements UserDao {
     private void parameter(User user,PreparedStatement preparedStatement) throws SQLException {
         preparedStatement.setString(1,user.getUsername());
         preparedStatement.setString(2,user.getPassword());
-        preparedStatement.setDate(3, (Date) user.getBirthday());
+        preparedStatement.setDate(3, new Date(user.getBirthday().getTime()));
         preparedStatement.setString(4,user.getEmail());
         preparedStatement.setString(5,user.getTelNumber());
     }

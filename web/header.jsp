@@ -12,7 +12,7 @@
         <div class="flex-grow-1 d-flex justify-content-end">
             <c:choose>
                 <c:when test="${empty sessionScope.status}">
-                    <a href="login.jsp">登录</a>
+                    <a href="${pageContext.request.contextPath}/login">登录</a>
                     <a href="register.jsp">注册</a>
                 </c:when>
                 <c:otherwise>

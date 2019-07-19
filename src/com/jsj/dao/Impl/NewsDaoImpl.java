@@ -23,7 +23,7 @@ public class NewsDaoImpl implements NewsDao {
     public List<News> getNewsListByCate(Integer cateId) throws SQLException {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         Connection connection = dataSource.getConnection();
-        String sql = "select * from news where cate_id = ?";
+        String sql = "select * from news where cate_id = ? limit 0 , 5";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setInt(1,cateId);
         ResultSet resultSet = preparedStatement.executeQuery();

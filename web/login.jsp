@@ -16,17 +16,17 @@
 
     <div class="form-label-group">
         <label for="username">用户名：</label>
-        <input type="text" id="username" class="form-control" placeholder="请输入用户名" name="username">
+        <input type="text" id="username" class="form-control" placeholder="请输入用户名" name="username" value="${requestScope.rememberUsername}">
     </div>
 
     <div class="form-label-group">
         <label for="password">密码：</label>
-        <input type="password" id="password" class="form-control" placeholder="请输入密码" name="password">
+        <input type="password" id="password" class="form-control" placeholder="请输入密码" name="password" value="${requestScope.rememberPassword}">
     </div>
 
     <div class="checkbox mb-3">
         <label>
-            <input type="checkbox" value="remember-me">记住我
+            <input type="checkbox" name="remember">记住我
         </label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
