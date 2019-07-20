@@ -1,5 +1,6 @@
 package com.jsj.factory;
 
+import com.jsj.dao.AdminDao;
 import com.jsj.dao.NewsCateDao;
 import com.jsj.dao.NewsDao;
 import com.jsj.dao.UserDao;
@@ -59,6 +60,16 @@ public class DaoFactory {
             e.printStackTrace();
         }
         return newsCateDao;
+    }
+
+    public static AdminDao getAdminDao(){
+        AdminDao adminDao = null;
+        try {
+            adminDao = (AdminDao) Class.forName(properties.getProperty("AdminDao")).newInstance();
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return adminDao;
     }
 
 }

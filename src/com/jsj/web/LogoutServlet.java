@@ -11,7 +11,7 @@ public class LogoutServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.getSession().removeAttribute("status");
+        request.getSession().removeAttribute("userStatus");
         request.getSession().removeAttribute("user");
         response.sendRedirect("/index");
     }

@@ -1,5 +1,6 @@
 package com.jsj.factory;
 
+import com.jsj.service.AdminService;
 import com.jsj.service.NewsCateService;
 import com.jsj.service.NewsService;
 import com.jsj.service.UserService;
@@ -60,6 +61,16 @@ public class ServiceFactory {
             e.printStackTrace();
         }
         return newsService;
+    }
+
+    public static AdminService getAdminService(){
+        AdminService adminService = null;
+        try {
+            adminService = (AdminService) Class.forName(properties.getProperty("AdminService")).newInstance();
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return adminService;
     }
 
 }

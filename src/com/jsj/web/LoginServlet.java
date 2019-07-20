@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
                     response.addCookie(passwordCookie);
                 }
                 out.println("登录成功，3秒后跳转到首页！如果没有跳转请点<a href='/index'>这里</a>");
-                request.getSession().setAttribute("status","user");
+                request.getSession().setAttribute("userStatus",true);
                 request.getSession().setAttribute("user",user);
                 response.setHeader("refresh", "2;url=/index.jsp");
             }else {
