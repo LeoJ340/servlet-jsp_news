@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
 <body>
-<form class="form-signin" method="post" action="${pageContext.request.contextPath}/admin"onsubmit="">
+<form class="form-signin" method="post" action="${pageContext.request.contextPath}/admin">
     <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">管理员登录</h1>
     </div>

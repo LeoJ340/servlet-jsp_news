@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
                 response.setHeader("refresh", "2;url=/login.jsp");
             }
         }catch (SQLException e){
-            out.println("连接异常，请稍后重试");
+            out.println("网络异常，请稍后重试");
             response.setHeader("refresh", "2;url=/login.jsp");
         }
     }

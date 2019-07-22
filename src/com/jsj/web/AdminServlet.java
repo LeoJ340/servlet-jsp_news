@@ -28,14 +28,14 @@ public class AdminServlet extends HttpServlet {
             if (admin.getId()!=null){
                 request.getSession().setAttribute("adminStatus",true);
                 request.getSession().setAttribute("admin",admin);
-                out.println("登录成功，3秒后跳转到首页！如果没有跳转请点<a href='/admin/index.jsp'>这里</a>");
+                out.println("登录成功，3秒后跳转到管理中心！如果没有跳转请点<a href='/admin/index.jsp'>这里</a>");
                 response.setHeader("refresh", "2;url=/admin/index.jsp");
             }else {
                 out.println("用户名或密码错误，请重试");
                 response.setHeader("refresh", "2;url=/admin/login.jsp");
             }
         } catch (SQLException e) {
-            out.println("连接异常，请稍后重试");
+            out.println("网络异常，请稍后重试");
             response.setHeader("refresh", "2;url=/admin/login.jsp");
         }
     }
