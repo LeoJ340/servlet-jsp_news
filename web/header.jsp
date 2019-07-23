@@ -26,7 +26,7 @@
 </header>
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
     <ul class="container navbar-nav">
-        <c:forEach items="${sessionScope.cates}" var="cate">
+        <c:forEach items="${sessionScope.allCate}" var="cate">
             <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/newsCate?cateId=${cate.id}" >
                     ${cate.name}

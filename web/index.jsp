@@ -13,7 +13,7 @@
   <%@include file="header.jsp"%>
   <div class="container mt-5 main">
     <div class="d-flex flex-wrap">
-      <c:forEach items="${sessionScope.newsVms}" var="newsVm">
+      <c:forEach items="${sessionScope.allNewsVm}" var="newsVm">
         <div class="news w-50 p-2">
           <div class="d-flex">
             <h3>${newsVm.name}</h3>
@@ -24,7 +24,7 @@
           <ul>
             <c:forEach items="${newsVm.news}" var="news">
               <li class="d-flex">
-                <a class="title">${news.title}</a>
+                <a class="title" href="${pageContext.request.contextPath}/news?newsId=${news.id}">${news.title}</a>
                 <span class="flex-grow-1 d-flex justify-content-end">${news.time}</span>
               </li>
             </c:forEach>

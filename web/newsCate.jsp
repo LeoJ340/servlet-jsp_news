@@ -17,15 +17,12 @@
     </nav>
     <div class="d-flex flex-wrap">
         <ul class="w-100">
-            <c:forEach items="${requestScope.newslist}" var="news">
-                <li class="d-flex flex-column pb-3 border-bottom">
+            <c:forEach items="${requestScope.newsList}" var="news">
+                <li class="pb-3 border-bottom">
                     <a href="${pageContext.request.contextPath}/news?newsId=${news.id}">
                         <h3>${news.title}</h3>
                     </a>
-                    <div class="d-flex">
-                        <p class="col-10 mb-0 p-0">${news.content}</p>
-                        <span class="col-2 align-self-end d-flex justify-content-end p-0 time">${news.time}</span>
-                    </div>
+                    <span class="d-flex justify-content-end time">${news.time}</span>
                 </li>
             </c:forEach>
         </ul>

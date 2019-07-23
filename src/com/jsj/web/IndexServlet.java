@@ -22,10 +22,10 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            List<NewsCate> newsCates = newsCateService.getAllCate();
-            request.getSession().setAttribute("cates",newsCates);
-            List<NewsVm> newsVms = newsCateService.getNewsVmList();
-            request.getSession().setAttribute("newsVms", newsVms);
+            List<NewsCate> allCate = newsCateService.getAllCate();
+            request.getSession().setAttribute("allCate",allCate);
+            List<NewsVm> allNewsVm = newsCateService.getNewsVmList();
+            request.getSession().setAttribute("allNewsVm", allNewsVm);
             request.getRequestDispatcher("index.jsp").forward(request,response);
         } catch (SQLException e) {
             response.getWriter().println("网络异常，请稍后重试");
