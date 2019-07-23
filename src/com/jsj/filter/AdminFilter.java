@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/admin/index.jsp")
+@WebFilter(urlPatterns = "/admin/manage/*")
 public class AdminFilter implements Filter {
 
     @Override

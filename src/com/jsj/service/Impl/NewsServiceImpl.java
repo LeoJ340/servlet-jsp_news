@@ -21,4 +21,9 @@ public class NewsServiceImpl implements NewsService {
     public News getNewsById(Integer id) throws SQLException {
         return newsDao.getById(id);
     }
+
+    @Override
+    public int publish(News news) throws SQLException {
+        return newsDao.insert(news);
+    }
 }

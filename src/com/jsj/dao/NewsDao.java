@@ -8,4 +8,6 @@ import java.util.List;
 public interface NewsDao extends BaseDao<News> {
 
     List<News> getNewsListByCate(Integer cateId) throws SQLException;
+
+    int insert(News news) throws SQLException;
 }

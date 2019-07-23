@@ -4,10 +4,7 @@ import com.jsj.dao.NewsDao;
 import com.jsj.entity.News;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +37,22 @@ public class NewsDaoImpl implements NewsDao {
         }
         connection.close();
         return newsList;
+    }
+
+    @Override
+    public int insert(News news) throws SQLException {
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+        Connection connection = dataSource.getConnection();
+        String sql = "insert into news(cate_id,title,author,time,content) values (?,?,?,?,?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1,news.getCateId());
+        preparedStatement.setString(2,news.getTitle());
+        preparedStatement.setString(3,news.getAuthor());
+        preparedStatement.setDate(4,new Date(news.getTime().getTime()));
+        preparedStatement.setString(5,news.getContent());
+        int res = preparedStatement.executeUpdate();
+        connection.close();
+        return res;
     }
 
     @Override
