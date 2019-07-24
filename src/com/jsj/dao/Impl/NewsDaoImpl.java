@@ -76,4 +76,25 @@ public class NewsDaoImpl implements NewsDao {
         return news;
     }
 
+    @Override
+    public List<News> getAll() throws SQLException {
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+        Connection connection = dataSource.getConnection();
+        String sql = "select * from news";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+        List<News> allNews = new ArrayList<>();
+        while (resultSet.next()){
+            News news = new News();
+            news.setId(resultSet.getInt("id"));
+            news.setCateId(resultSet.getInt("cate_id"));
+            news.setTitle(resultSet.getString("title"));
+            news.setAuthor(resultSet.getString("author"));
+            news.setTime(resultSet.getDate("time"));
+            news.setContent(resultSet.getString("content"));
+            allNews.add(news);
+        }
+        connection.close();
+        return allNews;
+    }
 }

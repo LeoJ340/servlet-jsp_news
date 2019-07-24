@@ -1,3 +1,6 @@
+ul, li {
+    list-style: none;
+}
 .left_nav {
     position: fixed;
     top: 0;

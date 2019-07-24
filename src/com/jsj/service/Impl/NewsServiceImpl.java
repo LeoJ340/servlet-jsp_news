@@ -26,4 +26,9 @@ public class NewsServiceImpl implements NewsService {
     public int publish(News news) throws SQLException {
         return newsDao.insert(news);
     }
+
+    @Override
+    public List<News> getAllNews() throws SQLException {
+        return newsDao.getAll();
+    }
 }
