@@ -14,6 +14,17 @@
     管理员用户：
         管理员登录：进入管理员登录页面输入账号密码完成登录，若账号存在则登录成功，若不存在则登录失败并回显错误信息，在没有管理员登录的状态下不允许进入管理中心。
         发表文章：在后台管理系统编辑发表新文章。
-        新闻分类管理：修改或删除新闻分类时，对所有属于该分类的新闻数据均会发生改变
-        新闻管理：对新闻文章数据进行增删改查操作。
-    
+        新闻分类管理：对新闻分类进行增删改操作。
+        新闻管理：对新闻文章数据进行删除操作。
+
+### 结果截图展示
+#### 首页：
+![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/index.png)
+#### 新闻详细页面
+![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/news.png)
+#### 管理中心发表新闻文章页面
+![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/publish.png)
+#### 新闻管理中心
+![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/newsManege.png)
+#### 新闻分类管理中心
+![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/newsCateManage.png)
