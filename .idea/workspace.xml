@@ -8,16 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="103579e1-d5ec-447a-b693-14f30491891f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/dao/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/dao/BaseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/dao/Impl/NewsCateDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/dao/Impl/NewsCateDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/dao/Impl/NewsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/dao/Impl/NewsDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/service/Impl/NewsCateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/service/Impl/NewsCateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/service/Impl/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/service/Impl/NewsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/service/NewsCateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/service/NewsCateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/service/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/service/NewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsCateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsCateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/manage/PublishNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/PublishNewsServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,56 +20,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jsj/web/manage/NewsServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jsj/web/manage/NewsCateServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="109" column="32" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/jsj/dao/Impl/NewsCateDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="64" column="73" lean-forward="true" selection-start-line="64" selection-start-column="73" selection-end-line="64" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jsj/service/Impl/NewsCateServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -310,7 +251,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -469,7 +410,7 @@
       <workItem from="1563872926108" duration="197000" />
       <workItem from="1563873299499" duration="619000" />
       <workItem from="1563933304981" duration="6509000" />
-      <workItem from="1563954245139" duration="17505000" />
+      <workItem from="1563954245139" duration="17889000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1560082699298</created>
@@ -562,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564022907035</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="管理中心">
+      <created>1564031478006</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1564031478006</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -598,11 +546,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132976000" />
+    <option name="totallyTimeSpent" value="133360000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.20576407" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -614,7 +561,7 @@
       <window_info id="Web" order="7" sideWeight="0.50708216" side_tool="true" weight="0.20308311" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36402267" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36402267" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -695,7 +642,8 @@
     <MESSAGE value="Format" />
     <MESSAGE value="分类管理数据渲染" />
     <MESSAGE value="管理中心数据渲染" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理中心数据渲染" />
+    <MESSAGE value="管理中心" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理中心" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test/TimerTest.java">
@@ -1116,7 +1064,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jsj/service/Impl/NewsCateServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
+        <state relative-caret-position="348">
           <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1126,8 +1074,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jsj/dao/Impl/NewsCateDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="64" column="73" lean-forward="true" selection-start-line="64" selection-start-column="73" selection-end-line="64" selection-end-column="73" />
+        <state relative-caret-position="678">
+          <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
