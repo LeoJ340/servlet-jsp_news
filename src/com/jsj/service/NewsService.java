@@ -14,4 +14,6 @@ public interface NewsService {
     int publish(News news) throws SQLException;
 
     List<News> getAllNews() throws SQLException;
+
+    int deleteNewsById(Integer id) throws SQLException;
 }

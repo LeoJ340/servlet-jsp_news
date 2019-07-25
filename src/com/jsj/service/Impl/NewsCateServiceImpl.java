@@ -40,4 +40,19 @@ public class NewsCateServiceImpl implements NewsCateService {
     public NewsCate getNewsCateById(Integer id) throws SQLException {
         return newsCateDao.getById(id);
     }
+
+    @Override
+    public int insert(NewsCate newsCate) throws SQLException {
+        return newsCateDao.insert(newsCate);
+    }
+
+    @Override
+    public int update(NewsCate newsCate) throws SQLException {
+        return newsCateDao.update(newsCate);
+    }
+
+    @Override
+    public int delete(Integer id) throws SQLException {
+        return newsCateDao.deleteById(id);
+    }
 }

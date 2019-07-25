@@ -31,4 +31,9 @@ public class NewsServiceImpl implements NewsService {
     public List<News> getAllNews() throws SQLException {
         return newsDao.getAll();
     }
+
+    @Override
+    public int deleteNewsById(Integer id) throws SQLException {
+        return newsDao.deleteById(id);
+    }
 }

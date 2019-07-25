@@ -17,7 +17,7 @@ public interface BaseDao<T> {
         return 0;
     }
 
-    default int deleteById(Integer id){
+    default int deleteById(Integer id) throws SQLException {
         return 0;
     }
 

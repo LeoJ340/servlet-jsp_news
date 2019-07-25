@@ -44,4 +44,41 @@ public class NewsCateDaoImpl implements NewsCateDao {
         connection.close();
         return newsCate;
     }
+
+    @Override
+    public int insert(NewsCate newsCate) throws SQLException {
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+        Connection connection = dataSource.getConnection();
+        String sql = "insert into news_cate(name) values (?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1,newsCate.getName());
+        int res = preparedStatement.executeUpdate();
+        connection.close();
+        return res;
+    }
+
+    @Override
+    public int update(NewsCate newsCate) throws SQLException {
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+        Connection connection = dataSource.getConnection();
+        String sql = "update news_cate set name=? where id=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1,newsCate.getName());
+        preparedStatement.setInt(2,newsCate.getId());
+        int res = preparedStatement.executeUpdate();
+        connection.close();
+        return res;
+    }
+
+    @Override
+    public int deleteById(Integer id) throws SQLException {
+        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+        Connection connection = dataSource.getConnection();
+        String sql = "delete from news_cate where id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1,id);
+        int res = preparedStatement.executeUpdate();
+        connection.close();
+        return res;
+    }
 }

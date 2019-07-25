@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -32,15 +33,26 @@ public class NewsServlet extends HttpServlet {
 
     /**
      * 删除新闻文章
-     * @param request
-     * @param response
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        Integer id = Integer.valueOf(request.getParameter("id"));
-        System.out.println(id);
+        PrintWriter out = response.getWriter();
+        try {
+            Integer id = Integer.valueOf(request.getParameter("id"));
+            int res = newsService.deleteNewsById(id);
+            if (res>0){
+                out.println("新闻删除成功");
+                response.setHeader("refresh", "2;url=/admin/manage/news");
+            }else {
+                out.println("新闻删除失败");
+                response.setHeader("refresh", "2;url=/admin/manage/news");
+            }
+        } catch (SQLException e) {
+            out.println("网络异常，请稍后重试");
+            response.setHeader("refresh", "2;url=/admin/manage/news");
+        }
 
     }
 

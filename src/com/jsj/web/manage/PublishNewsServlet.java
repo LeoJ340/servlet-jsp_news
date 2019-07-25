@@ -44,7 +44,7 @@ public class PublishNewsServlet extends HttpServlet {
      * @param response
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -65,7 +65,6 @@ public class PublishNewsServlet extends HttpServlet {
                 response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
             out.println("网络异常，请稍后重试");
             response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
         }

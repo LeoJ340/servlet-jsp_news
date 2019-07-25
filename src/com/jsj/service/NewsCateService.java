@@ -13,4 +13,10 @@ public interface NewsCateService {
     List<NewsVm> getNewsVmList() throws SQLException;
 
     NewsCate getNewsCateById(Integer id) throws SQLException;
+
+    int insert(NewsCate newsCate) throws SQLException;
+
+    int update(NewsCate newsCate) throws SQLException;
+
+    int delete(Integer id) throws SQLException;
 }
