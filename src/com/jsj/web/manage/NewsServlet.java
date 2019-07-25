@@ -29,4 +29,20 @@ public class NewsServlet extends HttpServlet {
             response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
         }
     }
+
+    /**
+     * 删除新闻文章
+     * @param request
+     * @param response
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+        Integer id = Integer.valueOf(request.getParameter("id"));
+        System.out.println(id);
+
+    }
+
+
 }

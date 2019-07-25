@@ -22,24 +22,24 @@
         <%@include file="nav.jsp"%>
         <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex flex-column pt-3 pb-5 mb-3">
-                <form class="p-3 mb-2 ml-4" method="post" action="/">
+                <form class="p-3 mb-2 ml-4" method="post" action="${pageContext.request.contextPath}/admin/manage/newsCate">
                     <label>
-                        <input type="text">
+                        <input type="text" name="name">
                     </label>
                     <button type="submit" name="method" value="insert" class="btn btn-dark btn-sm ml-5">添加</button>
                 </form>
                 <ul>
                     <c:forEach items="${sessionScope.allCate}" var="cate">
-                        <li class="mb-2 p-3 border-top">
-                            <form class="row" method="post" action="/">
-                                <input type="text" disabled="disabled" value="${cate.name}" class="${cate.id}" />
+                        <li class="p-3 border-top">
+                            <form class="row" method="post" action="${pageContext.request.contextPath}/admin/manage/newsCate">
+                                <input type="text" disabled="disabled" value="${cate.name}" class="${cate.id}" name="name" />
                                 <div style="display: none;" class="ml-2 btn-group btn-group-sm ${cate.id}">
-                                    <button type="submit" class="btn btn-dark" name="method" value="update">保存</button>
+                                    <button type="submit" class="btn btn-dark" name="id" value="${cate.id}">保存</button>
                                     <button type="button" class="btn btn-dark ml-3" onclick="cancel(${cate.id})">取消</button>
                                 </div>
                                 <div class="ml-auto btn-group btn-group-sm">
                                     <button type="button" class="btn btn-info mr-3" onclick="edit(${cate.id})">编辑</button>
-                                    <button type="submit" class="btn btn-danger" name="method" value="delete">删除</button>
+                                    <button type="submit" class="btn btn-danger" name="id" value="${cate.id}" >删除</button>
                                 </div>
                             </form>
                         </li>

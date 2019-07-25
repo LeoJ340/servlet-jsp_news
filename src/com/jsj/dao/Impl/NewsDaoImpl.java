@@ -1,7 +1,10 @@
 package com.jsj.dao.Impl;
 
+import com.jsj.dao.NewsCateDao;
 import com.jsj.dao.NewsDao;
 import com.jsj.entity.News;
+import com.jsj.entity.NewsCate;
+import com.jsj.factory.DaoFactory;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import java.sql.*;
@@ -9,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewsDaoImpl implements NewsDao {
+
+    private NewsCateDao newsCateDao = DaoFactory.getNewsCateDao();
 
     /**
      *
@@ -87,7 +92,8 @@ public class NewsDaoImpl implements NewsDao {
         while (resultSet.next()){
             News news = new News();
             news.setId(resultSet.getInt("id"));
-            news.setCateId(resultSet.getInt("cate_id"));
+            NewsCate newsCate = newsCateDao.getById(resultSet.getInt("cate_id"));
+            news.setCate(newsCate.getName());
             news.setTitle(resultSet.getString("title"));
             news.setAuthor(resultSet.getString("author"));
             news.setTime(resultSet.getDate("time"));

@@ -16,7 +16,7 @@
         <%@include file="nav.jsp"%>
         <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex flex-column pt-3 pb-5 mb-3">
-                <form method="post" action="${pageContext.request.contextPath}/news">
+                <form method="post" action="${pageContext.request.contextPath}/admin/manage/publish">
                     <input type="text" maxlength="50" placeholder="请输入标题" class="w-100 pl-3 mt-3 mb-3 title" name="title" />
                     <textarea name="content" id="editor"></textarea>
                     新闻分类：
@@ -29,7 +29,6 @@
                     </label>
                     <br />
                     <button type="submit" name="method" value="publish" class="mt-3 btn btn-danger">发表</button>
-                    <button type="submit" name="method" value="save" class="mt-3 ml-3 btn btn-warning">保存为草稿</button>
                 </form>
             </div>
         </main>
