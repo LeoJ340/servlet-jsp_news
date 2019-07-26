@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -25,8 +26,10 @@ public class NewsCateServlet extends HttpServlet {
             request.getRequestDispatcher("/admin/manage/newsCate.jsp").forward(request,response);
         } catch (SQLException e) {
             response.setContentType("text/html;charset=UTF-8");
-            response.getWriter().println("网络异常，请稍后重试");
-            response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
+            try(PrintWriter out = response.getWriter()){
+                out.println("网络异常，请稍后重试");
+                response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
+            }
         }
     }
 
@@ -34,36 +37,38 @@ public class NewsCateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        if (request.getParameter("method")!=null&&request.getParameter("method").equals("insert")){
-            //添加新闻分类
-            insert(request,response);
-        }else if (request.getParameter("name")!=null){
-            //修改分类
-            update(request,response);
-        }else {
-            //删除分类
-            delete(request,response);
+        try(PrintWriter out = response.getWriter()){
+            if (request.getParameter("method")!=null&&request.getParameter("method").equals("insert")){
+                //添加新闻分类
+                insert(request,response,out);
+            }else if (request.getParameter("name")!=null){
+                //修改分类
+                update(request,response,out);
+            }else {
+                //删除分类
+                delete(request,response,out);
+            }
         }
     }
 
     /**
      * 添加分类
      */
-    public void insert(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    public void insert(HttpServletRequest request,HttpServletResponse response,PrintWriter out) {
         String name = request.getParameter("name");
         NewsCate newsCate = new NewsCate();
         newsCate.setName(name);
         try {
             int res = newsCateService.insert(newsCate);
             if (res>0){
-                response.getWriter().println("添加成功");
+                out.println("添加成功");
                 response.setHeader("refresh", "2;url=/admin/manage/newsCate");
             }else {
-                response.getWriter().println("添加失败");
+                out.println("添加失败");
                 response.setHeader("refresh", "2;url=/admin/manage/newsCate");
             }
         } catch (SQLException e) {
-            response.getWriter().println("网络异常，请稍后重试");
+            out.println("网络异常，请稍后重试");
             response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
         }
     }
@@ -71,19 +76,19 @@ public class NewsCateServlet extends HttpServlet {
     /**
      * 删除分类
      */
-    public void delete(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    public void delete(HttpServletRequest request,HttpServletResponse response,PrintWriter out) {
         Integer id = Integer.valueOf(request.getParameter("id"));
         try {
             int res = newsCateService.delete(id);
             if (res>0){
-                response.getWriter().println("删除成功");
+                out.println("删除成功");
                 response.setHeader("refresh", "2;url=/admin/manage/newsCate");
             }else {
-                response.getWriter().println("添加失败");
+                out.println("添加失败");
                 response.setHeader("refresh", "2;url=/admin/manage/newsCate");
             }
         } catch (SQLException e) {
-            response.getWriter().println("网络异常，请稍后重试");
+            out.println("网络异常，请稍后重试");
             response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
         }
     }
@@ -91,7 +96,7 @@ public class NewsCateServlet extends HttpServlet {
     /**
      * 修改分类
      */
-    public void update(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    public void update(HttpServletRequest request,HttpServletResponse response,PrintWriter out) {
         String name = request.getParameter("name");
         Integer id = Integer.valueOf(request.getParameter("id"));
         NewsCate newsCate = new NewsCate();
@@ -100,15 +105,14 @@ public class NewsCateServlet extends HttpServlet {
         try {
             int res = newsCateService.update(newsCate);
             if (res>0){
-                response.getWriter().println("修改成功");
+                out.println("修改成功");
                 response.setHeader("refresh", "2;url=/admin/manage/newsCate");
             }else {
-                response.getWriter().println("修改失败");
+                out.println("修改失败");
                 response.setHeader("refresh", "2;url=/admin/manage/newsCate");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            response.getWriter().println("网络异常，请稍后重试");
+            out.println("网络异常，请稍后重试");
             response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
         }
     }

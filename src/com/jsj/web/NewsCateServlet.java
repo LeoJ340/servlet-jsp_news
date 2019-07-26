@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -31,9 +32,11 @@ public class NewsCateServlet extends HttpServlet {
             request.setAttribute("cateName",newsCate.getName());
             request.getRequestDispatcher("newsCate.jsp").forward(request,response);
         } catch (SQLException e) {
-            response.setContentType("text/html;charset=UTF-8");
-            response.getWriter().println("网络异常，请稍后重试");
-            response.setHeader("refresh", "2;url=/index.jsp");
+            try(PrintWriter out = response.getWriter()){
+                response.setContentType("text/html;charset=UTF-8");
+                out.println("网络异常，请稍后重试");
+                response.setHeader("refresh", "2;url=/index.jsp");
+            }
         }
     }
 }

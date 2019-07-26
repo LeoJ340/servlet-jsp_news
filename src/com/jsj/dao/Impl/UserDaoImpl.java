@@ -11,47 +11,38 @@ public class UserDaoImpl implements UserDao {
     @Override
     public int insert(User user) throws SQLException {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        Connection connection = dataSource.getConnection();
-        String sql = "insert into user(username,password,birthday,email,tel_number) values (?,?,?,?,?)";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        parameter(user,preparedStatement);
-        int res = preparedStatement.executeUpdate();
-        connection.close();
-        return res;
-    }
-
-    @Override
-    public int update(User user) throws SQLException {
-        ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        Connection connection = dataSource.getConnection();
-        String sql = "update user set (username=?,password=?,birthday=?,email=?,tel_number=?) where id=?";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        parameter(user,preparedStatement);
-        preparedStatement.setInt(6,user.getId());
-        int res = preparedStatement.executeUpdate();
-        connection.close();
+        int res;
+        try(Connection connection = dataSource.getConnection()){
+            String sql = "insert into user(username,password,birthday,email,tel_number) values (?,?,?,?,?)";
+            try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+                parameter(user,preparedStatement);
+                res = preparedStatement.executeUpdate();
+            }
+        }
         return res;
     }
 
     @Override
     public User getUserByPassword(String username, String password) throws SQLException {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        Connection connection = dataSource.getConnection();
-        String loginSql = "select * from user where username = ? and password = ?";
-        PreparedStatement preparedStatement = connection.prepareStatement(loginSql);
-        preparedStatement.setString(1,username);
-        preparedStatement.setString(2,password);
-        ResultSet resultSet = preparedStatement.executeQuery();
         User user = new User();
-        if (resultSet.next()){
-            user.setId(resultSet.getInt("id"));
-            user.setUsername(resultSet.getNString("username"));
-            user.setPassword(resultSet.getString("password"));
-            user.setBirthday(resultSet.getDate("birthday"));
-            user.setEmail(resultSet.getString("email"));
-            user.setTelNumber(resultSet.getString("tel_number"));
+        try(Connection connection = dataSource.getConnection()){
+            String sql = "select * from user where username = ? and password = ?";
+            try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+                preparedStatement.setString(1,username);
+                preparedStatement.setString(2,password);
+                try(ResultSet resultSet = preparedStatement.executeQuery()){
+                    if (resultSet.next()){
+                        user.setId(resultSet.getInt("id"));
+                        user.setUsername(resultSet.getNString("username"));
+                        user.setPassword(resultSet.getString("password"));
+                        user.setBirthday(resultSet.getDate("birthday"));
+                        user.setEmail(resultSet.getString("email"));
+                        user.setTelNumber(resultSet.getString("tel_number"));
+                    }
+                }
+            }
         }
-        connection.close();
         return user;
     }
 

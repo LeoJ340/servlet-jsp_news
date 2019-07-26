@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -28,7 +29,9 @@ public class IndexServlet extends HttpServlet {
             request.getSession().setAttribute("allNewsVm", allNewsVm);
             request.getRequestDispatcher("index.jsp").forward(request,response);
         } catch (SQLException e) {
-            response.getWriter().println("网络异常，请稍后重试");
+            try(PrintWriter out = response.getWriter()){
+                out.println("网络异常，请稍后重试");
+            }
         }
     }
 }

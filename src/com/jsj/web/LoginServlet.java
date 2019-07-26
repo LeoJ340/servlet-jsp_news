@@ -22,31 +22,32 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        try {
-            User user = userService.login(username,password);
-            if (user.getId()!=null){
-                if (request.getParameter("remember")!=null){
-                    Cookie usernameCookie = new Cookie("rememberUsername",username);
-                    usernameCookie.setMaxAge(7*24*60*60);
-                    Cookie passwordCookie = new Cookie("rememberPassword",password);
-                    passwordCookie.setMaxAge(7*24*60*60);
-                    response.addCookie(usernameCookie);
-                    response.addCookie(passwordCookie);
+        try(PrintWriter out = response.getWriter()){
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            try {
+                User user = userService.login(username,password);
+                if (user.getId()!=null){
+                    if (request.getParameter("remember")!=null){
+                        Cookie usernameCookie = new Cookie("rememberUsername",username);
+                        usernameCookie.setMaxAge(7*24*60*60);
+                        Cookie passwordCookie = new Cookie("rememberPassword",password);
+                        passwordCookie.setMaxAge(7*24*60*60);
+                        response.addCookie(usernameCookie);
+                        response.addCookie(passwordCookie);
+                    }
+                    out.println("登录成功，3秒后跳转到首页！如果没有跳转请点<a href='/index'>这里</a>");
+                    request.getSession().setAttribute("userStatus",true);
+                    request.getSession().setAttribute("user",user);
+                    response.setHeader("refresh", "2;url=/index.jsp");
+                }else {
+                    out.println("用户名或密码错误，请重试");
+                    response.setHeader("refresh", "2;url=/login.jsp");
                 }
-                out.println("登录成功，3秒后跳转到首页！如果没有跳转请点<a href='/index'>这里</a>");
-                request.getSession().setAttribute("userStatus",true);
-                request.getSession().setAttribute("user",user);
-                response.setHeader("refresh", "2;url=/index.jsp");
-            }else {
-                out.println("用户名或密码错误，请重试");
+            }catch (SQLException e){
+                out.println("网络异常，请稍后重试");
                 response.setHeader("refresh", "2;url=/login.jsp");
             }
-        }catch (SQLException e){
-            out.println("网络异常，请稍后重试");
-            response.setHeader("refresh", "2;url=/login.jsp");
         }
     }
 
