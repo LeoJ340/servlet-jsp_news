@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -34,13 +33,12 @@ public class RegisterServlet extends HttpServlet {
             }
             user.setEmail(request.getParameter("email"));
             user.setTelNumber(request.getParameter("telNumber"));
-            try {
-                if (userService.register(user)){
-                    out.println("注册成功，3秒后跳转到首页！或现在去<a href='/login.jsp'>登录</a>");
-                    response.setHeader("refresh", "2;url=/index.jsp");
-                }
-            } catch (SQLException e) {
-                out.println("网络异常，请稍后重试");
+            int res = userService.register(user);
+            if (res>0){
+                out.println("注册成功，3秒后跳转到首页！或现在去<a href='/login.jsp'>登录</a>");
+                response.setHeader("refresh", "2;url=/index.jsp");
+            }else {
+                out.println("注册失败!");
                 response.setHeader("refresh", "2;url=/register.jsp");
             }
         }

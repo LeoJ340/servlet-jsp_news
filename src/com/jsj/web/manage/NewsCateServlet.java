@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet("/admin/manage/newsCate")
@@ -20,17 +19,9 @@ public class NewsCateServlet extends HttpServlet {
     private NewsCateService newsCateService = ServiceFactory.getNewsCateService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            List<NewsCate> allCate = newsCateService.getAllCate();
-            request.getSession().setAttribute("allCate",allCate);
-            request.getRequestDispatcher("/admin/manage/newsCate.jsp").forward(request,response);
-        } catch (SQLException e) {
-            response.setContentType("text/html;charset=UTF-8");
-            try(PrintWriter out = response.getWriter()){
-                out.println("网络异常，请稍后重试");
-                response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
-            }
-        }
+        List<NewsCate> allCate = newsCateService.getAllCate();
+        request.getSession().setAttribute("allCate",allCate);
+        request.getRequestDispatcher("/admin/manage/newsCate.jsp").forward(request,response);
     }
 
     @Override
@@ -58,18 +49,13 @@ public class NewsCateServlet extends HttpServlet {
         String name = request.getParameter("name");
         NewsCate newsCate = new NewsCate();
         newsCate.setName(name);
-        try {
-            int res = newsCateService.insert(newsCate);
-            if (res>0){
-                out.println("添加成功");
-                response.setHeader("refresh", "2;url=/admin/manage/newsCate");
-            }else {
-                out.println("添加失败");
-                response.setHeader("refresh", "2;url=/admin/manage/newsCate");
-            }
-        } catch (SQLException e) {
-            out.println("网络异常，请稍后重试");
-            response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
+        int res = newsCateService.insert(newsCate);
+        if (res>0){
+            out.println("添加成功");
+            response.setHeader("refresh", "2;url=/admin/manage/newsCate");
+        }else {
+            out.println("添加失败");
+            response.setHeader("refresh", "2;url=/admin/manage/newsCate");
         }
     }
 
@@ -78,18 +64,13 @@ public class NewsCateServlet extends HttpServlet {
      */
     public void delete(HttpServletRequest request,HttpServletResponse response,PrintWriter out) {
         Integer id = Integer.valueOf(request.getParameter("id"));
-        try {
-            int res = newsCateService.delete(id);
-            if (res>0){
-                out.println("删除成功");
-                response.setHeader("refresh", "2;url=/admin/manage/newsCate");
-            }else {
-                out.println("添加失败");
-                response.setHeader("refresh", "2;url=/admin/manage/newsCate");
-            }
-        } catch (SQLException e) {
-            out.println("网络异常，请稍后重试");
-            response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
+        int res = newsCateService.delete(id);
+        if (res>0){
+            out.println("删除成功");
+            response.setHeader("refresh", "2;url=/admin/manage/newsCate");
+        }else {
+            out.println("添加失败");
+            response.setHeader("refresh", "2;url=/admin/manage/newsCate");
         }
     }
 
@@ -102,18 +83,13 @@ public class NewsCateServlet extends HttpServlet {
         NewsCate newsCate = new NewsCate();
         newsCate.setId(id);
         newsCate.setName(name);
-        try {
-            int res = newsCateService.update(newsCate);
-            if (res>0){
-                out.println("修改成功");
-                response.setHeader("refresh", "2;url=/admin/manage/newsCate");
-            }else {
-                out.println("修改失败");
-                response.setHeader("refresh", "2;url=/admin/manage/newsCate");
-            }
-        } catch (SQLException e) {
-            out.println("网络异常，请稍后重试");
-            response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
+        int res = newsCateService.update(newsCate);
+        if (res>0){
+            out.println("修改成功");
+            response.setHeader("refresh", "2;url=/admin/manage/newsCate");
+        }else {
+            out.println("修改失败");
+            response.setHeader("refresh", "2;url=/admin/manage/newsCate");
         }
     }
 

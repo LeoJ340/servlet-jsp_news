@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 
 @WebServlet("/admin")
 public class AdminServlet extends HttpServlet {
@@ -23,19 +22,14 @@ public class AdminServlet extends HttpServlet {
         try(PrintWriter out = response.getWriter()){
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-            try {
-                Admin admin = adminService.login(username,password);
-                if (admin.getId()!=null){
-                    request.getSession().setAttribute("adminStatus",true);
-                    request.getSession().setAttribute("admin",admin);
-                    out.println("登录成功，3秒后跳转到管理中心！如果没有跳转请点<a href='/admin/manage/index.jsp'>这里</a>");
-                    response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
-                }else {
-                    out.println("用户名或密码错误，请重试");
-                    response.setHeader("refresh", "2;url=/admin/login.jsp");
-                }
-            } catch (SQLException e) {
-                out.println("网络异常，请稍后重试");
+            Admin admin = adminService.login(username,password);
+            if (admin!=null){
+                request.getSession().setAttribute("adminStatus",true);
+                request.getSession().setAttribute("admin",admin);
+                out.println("登录成功，3秒后跳转到管理中心！如果没有跳转请点<a href='/admin/manage/index.jsp'>这里</a>");
+                response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
+            }else {
+                out.println("用户名或密码错误，请重试");
                 response.setHeader("refresh", "2;url=/admin/login.jsp");
             }
         }

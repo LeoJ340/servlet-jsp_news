@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.List;
 
 @WebServlet("/newsCate")
@@ -25,18 +23,10 @@ public class NewsCateServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer cateId = Integer.valueOf(request.getParameter("cateId"));
-        try {
-            NewsCate newsCate = newsCateService.getNewsCateById(cateId);
-            List<News> newsList = newsService.getNewsListByCate(cateId);
-            request.setAttribute("newsList",newsList);
-            request.setAttribute("cateName",newsCate.getName());
-            request.getRequestDispatcher("newsCate.jsp").forward(request,response);
-        } catch (SQLException e) {
-            try(PrintWriter out = response.getWriter()){
-                response.setContentType("text/html;charset=UTF-8");
-                out.println("网络异常，请稍后重试");
-                response.setHeader("refresh", "2;url=/index.jsp");
-            }
-        }
+        NewsCate newsCate = newsCateService.getNewsCateById(cateId);
+        List<News> newsList = newsService.getNewsListByCate(cateId);
+        request.setAttribute("newsList",newsList);
+        request.setAttribute("cateName",newsCate.getName());
+        request.getRequestDispatcher("newsCate.jsp").forward(request,response);
     }
 }

@@ -2,18 +2,17 @@ package com.jsj.service;
 
 import com.jsj.entity.News;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface NewsService {
 
-    List<News> getNewsListByCate(Integer cateId) throws SQLException;
+    List<News> getNewsListByCate(Integer cateId);
 
-    News getNewsById(Integer id) throws SQLException;
+    News getNewsById(Integer id);
 
-    int publish(News news) throws SQLException;
+    int publish(News news);
 
-    List<News> getAllNews() throws SQLException;
+    List<News> getAllNews();
 
-    int deleteNewsById(Integer id) throws SQLException;
+    int deleteNewsById(Integer id);
 }

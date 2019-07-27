@@ -12,7 +12,11 @@ public class AdminServiceImpl implements AdminService {
     private AdminDao adminDao = DaoFactory.getAdminDao();
 
     @Override
-    public Admin login(String username, String password) throws SQLException {
-        return adminDao.getAdminByPassword(username, password);
+    public Admin login(String username, String password) {
+        try {
+            return adminDao.getAdminByPassword(username, password);
+        } catch (SQLException e) {
+            return null;
+        }
     }
 }

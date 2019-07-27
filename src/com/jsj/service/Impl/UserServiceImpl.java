@@ -12,14 +12,21 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao = DaoFactory.getUserDao();
 
     @Override
-    public boolean register(User user) throws SQLException {
-        int res = userDao.insert(user);
-        return res > 0;
+    public int register(User user) {
+        try {
+            return userDao.insert(user);
+        } catch (SQLException e) {
+            return -1;
+        }
     }
 
     @Override
-    public User login(String username, String password) throws SQLException {
-        return userDao.getUserByPassword(username,password);
+    public User login(String username, String password) {
+        try {
+            return userDao.getUserByPassword(username,password);
+        } catch (SQLException e) {
+            return null;
+        }
     }
 
 }

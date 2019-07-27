@@ -18,41 +18,65 @@ public class NewsCateServiceImpl implements NewsCateService {
     private NewsDao newsDao = DaoFactory.getNewsDao();
 
     @Override
-    public List<NewsCate> getAllCate() throws SQLException {
-        return newsCateDao.getAll();
-    }
-
-    @Override
-    public List<NewsVm> getNewsVmList() throws SQLException {
-        List<NewsVm> newsVmList = new ArrayList<>();
-        List<NewsCate> newsAllCate = newsCateDao.getAll();
-        for (NewsCate newsCate:newsAllCate ) {
-            NewsVm newsVm = new NewsVm();
-            newsVm.setCateId(newsCate.getId());
-            newsVm.setName(newsCate.getName());
-            newsVm.setNews(newsDao.getNewsListByCate(newsCate.getId()));
-            newsVmList.add(newsVm);
+    public List<NewsCate> getAllCate() {
+        try {
+            return newsCateDao.getAll();
+        } catch (SQLException e) {
+            return null;
         }
-        return newsVmList;
     }
 
     @Override
-    public NewsCate getNewsCateById(Integer id) throws SQLException {
-        return newsCateDao.getById(id);
+    public List<NewsVm> getNewsVmList() {
+        try {
+            List<NewsVm> newsVmList = new ArrayList<>();
+            List<NewsCate> newsAllCate = newsCateDao.getAll();
+            for (NewsCate newsCate:newsAllCate ) {
+                NewsVm newsVm = new NewsVm();
+                newsVm.setCateId(newsCate.getId());
+                newsVm.setName(newsCate.getName());
+                newsVm.setNews(newsDao.getNewsListByCate(newsCate.getId()));
+                newsVmList.add(newsVm);
+            }
+            return newsVmList;
+        }catch (SQLException e){
+            return null;
+        }
     }
 
     @Override
-    public int insert(NewsCate newsCate) throws SQLException {
-        return newsCateDao.insert(newsCate);
+    public NewsCate getNewsCateById(Integer id) {
+        try {
+            return newsCateDao.getById(id);
+        } catch (SQLException e) {
+            return null;
+        }
     }
 
     @Override
-    public int update(NewsCate newsCate) throws SQLException {
-        return newsCateDao.update(newsCate);
+    public int insert(NewsCate newsCate) {
+        try {
+            return newsCateDao.insert(newsCate);
+        } catch (SQLException e) {
+            return -1;
+        }
     }
 
     @Override
-    public int delete(Integer id) throws SQLException {
-        return newsCateDao.deleteById(id);
+    public int update(NewsCate newsCate) {
+        try {
+            return newsCateDao.update(newsCate);
+        } catch (SQLException e) {
+            return -1;
+        }
+    }
+
+    @Override
+    public int delete(Integer id) {
+        try {
+            return newsCateDao.deleteById(id);
+        } catch (SQLException e) {
+            return -1;
+        }
     }
 }

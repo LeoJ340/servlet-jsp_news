@@ -3,20 +3,19 @@ package com.jsj.service;
 import com.jsj.entity.NewsVm;
 import com.jsj.entity.NewsCate;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface NewsCateService {
 
-    List<NewsCate> getAllCate() throws SQLException;
+    List<NewsCate> getAllCate();
 
-    List<NewsVm> getNewsVmList() throws SQLException;
+    List<NewsVm> getNewsVmList();
 
-    NewsCate getNewsCateById(Integer id) throws SQLException;
+    NewsCate getNewsCateById(Integer id);
 
-    int insert(NewsCate newsCate) throws SQLException;
+    int insert(NewsCate newsCate);
 
-    int update(NewsCate newsCate) throws SQLException;
+    int update(NewsCate newsCate);
 
-    int delete(Integer id) throws SQLException;
+    int delete(Integer id);
 }
