@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>${requestScope.news.title}</title>
     <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
 </head>
 <body>
 <%@include file="header.jsp"%>
-<div class="container mt-1 p-0 main">
+<div class="container mt-3 p-0 main">
     <div class="d-flex flex-wrap flex-column">
         <h1 class="text-center mb-3">${requestScope.news.title}</h1>
         <div class="d-flex justify-content-end mb-3">
