@@ -29,16 +29,16 @@ public class NewsCateServiceImpl implements NewsCateService {
     @Override
     public List<NewsCateVo> getNewsCateVoList() {
         try {
-            List<NewsCateVo> newsVmList = new ArrayList<>();
+            List<NewsCateVo> newsCateVoList = new ArrayList<>();
             List<NewsCate> newsAllCate = newsCateDao.getAll();
             for (NewsCate newsCate:newsAllCate ) {
-                NewsCateVo newsVm = new NewsCateVo();
-                newsVm.setCateId(newsCate.getId());
-                newsVm.setName(newsCate.getName());
-                newsVm.setNews(newsDao.getNewsListByCate(newsCate.getId()));
-                newsVmList.add(newsVm);
+                NewsCateVo newsCateVo = new NewsCateVo();
+                newsCateVo.setCateId(newsCate.getId());
+                newsCateVo.setName(newsCate.getName());
+                newsCateVo.setNews(newsDao.getNewsListByCate(newsCate.getId()));
+                newsCateVoList.add(newsCateVo);
             }
-            return newsVmList;
+            return newsCateVoList;
         }catch (SQLException e){
             return null;
         }
