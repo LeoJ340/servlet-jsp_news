@@ -1,6 +1,6 @@
 package com.jsj.web;
 
-import com.jsj.entity.NewsVm;
+import com.jsj.entity.NewsCateVo;
 import com.jsj.entity.NewsCate;
 import com.jsj.factory.ServiceFactory;
 import com.jsj.service.NewsCateService;
@@ -22,8 +22,8 @@ public class IndexServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         List<NewsCate> allCate = newsCateService.getAllCate();
         request.getSession().setAttribute("allCate",allCate);
-        List<NewsVm> allNewsVm = newsCateService.getNewsVmList();
-        request.getSession().setAttribute("allNewsVm", allNewsVm);
+        List<NewsCateVo> allNewsCateVo = newsCateService.getNewsCateVoList();
+        request.getSession().setAttribute("allNewsCateVo", allNewsCateVo);
         request.getRequestDispatcher("index.jsp").forward(request,response);
     }
 }

@@ -13,16 +13,16 @@
   <%@include file="header.jsp"%>
   <div class="container mt-3 main">
     <div class="d-flex flex-wrap">
-      <c:forEach items="${sessionScope.allNewsVm}" var="newsVm">
+      <c:forEach items="${sessionScope.allNewsCateVo}" var="NewsCateVo">
         <div class="news w-50 p-2">
           <div class="d-flex">
-            <h3>${newsVm.name}</h3>
+            <h3>${NewsCateVo.name}</h3>
             <div class="flex-grow-1 d-flex justify-content-end">
-              <a href="${pageContext.request.contextPath}/newsCate?cateId=${newsVm.cateId}">更多</a>
+              <a href="${pageContext.request.contextPath}/newsCate?cateId=${NewsCateVo.cateId}">更多</a>
             </div>
           </div>
           <ul>
-            <c:forEach items="${newsVm.news}" var="news">
+            <c:forEach items="${NewsCateVo.news}" var="news">
               <li class="d-flex">
                 <a class="title" href="${pageContext.request.contextPath}/news?newsId=${news.id}">${news.title}</a>
                 <span class="flex-grow-1 d-flex justify-content-end time">${news.time}</span>

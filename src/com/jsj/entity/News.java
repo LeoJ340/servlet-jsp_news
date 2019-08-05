@@ -8,8 +8,6 @@ public class News {
 
     private Integer cateId;
 
-    private String cate;
-
     private String title;
 
     private Date time;
@@ -17,7 +15,6 @@ public class News {
     private String author;
 
     private String content;
-
 
     public Integer getId() {
         return id;
@@ -33,14 +30,6 @@ public class News {
 
     public void setCateId(Integer cateId) {
         this.cateId = cateId;
-    }
-
-    public String getCate() {
-        return cate;
-    }
-
-    public void setCate(String cate) {
-        this.cate = cate;
     }
 
     public String getTitle() {

@@ -1,6 +1,7 @@
 package com.jsj.service;
 
 import com.jsj.entity.News;
+import com.jsj.entity.NewsVo;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface NewsService {
 
     int publish(News news);
 
-    List<News> getAllNews();
+    List<NewsVo> getAllNewsVo();
 
     int deleteNewsById(Integer id);
 }

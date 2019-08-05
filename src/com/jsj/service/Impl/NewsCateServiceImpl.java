@@ -2,7 +2,7 @@ package com.jsj.service.Impl;
 
 import com.jsj.dao.NewsCateDao;
 import com.jsj.dao.NewsDao;
-import com.jsj.entity.NewsVm;
+import com.jsj.entity.NewsCateVo;
 import com.jsj.entity.NewsCate;
 import com.jsj.factory.DaoFactory;
 import com.jsj.service.NewsCateService;
@@ -27,12 +27,12 @@ public class NewsCateServiceImpl implements NewsCateService {
     }
 
     @Override
-    public List<NewsVm> getNewsVmList() {
+    public List<NewsCateVo> getNewsCateVoList() {
         try {
-            List<NewsVm> newsVmList = new ArrayList<>();
+            List<NewsCateVo> newsVmList = new ArrayList<>();
             List<NewsCate> newsAllCate = newsCateDao.getAll();
             for (NewsCate newsCate:newsAllCate ) {
-                NewsVm newsVm = new NewsVm();
+                NewsCateVo newsVm = new NewsCateVo();
                 newsVm.setCateId(newsCate.getId());
                 newsVm.setName(newsCate.getName());
                 newsVm.setNews(newsDao.getNewsListByCate(newsCate.getId()));

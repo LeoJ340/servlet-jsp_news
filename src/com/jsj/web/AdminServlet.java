@@ -4,6 +4,7 @@ import com.jsj.entity.Admin;
 import com.jsj.factory.ServiceFactory;
 import com.jsj.service.AdminService;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,4 +36,10 @@ public class AdminServlet extends HttpServlet {
         }
     }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().removeAttribute("adminStatus");
+        request.getSession().removeAttribute("admin");
+        response.sendRedirect("/index");
+    }
 }

@@ -17,16 +17,16 @@
         <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex flex-column pt-3 pb-5 mb-3">
                 <ul>
-                    <c:forEach items="${sessionScope.allNews}" var="news">
+                    <c:forEach items="${sessionScope.allNewsVo}" var="newsVo">
                         <li class="pt-3 pb-1 border-top d-block">
                             <form class="d-flex flex-column" method="post" action="${pageContext.request.contextPath}/admin/manage/news">
                                 <h3>
-                                    <a href="${pageContext.request.contextPath}/news?newsId=${news.id}">[${news.cate}]${news.title}</a>
+                                    <a href="${pageContext.request.contextPath}/news?newsId=${newsVo.id}">[${newsVo.newsCate.name}]${newsVo.title}</a>
                                 </h3>
                                 <div class="row pl-3 pr-3">
-                                    <span class="pt-2 time">${news.time}</span>
-                                    <span class="ml-2 pt-2 author">${news.author}</span>
-                                    <button type="submit" class="ml-auto btn btn-danger btn-sm" name="id" value="${news.id}">删除</button>
+                                    <span class="pt-2 time">${newsVo.time}</span>
+                                    <span class="ml-2 pt-2 author">${newsVo.author}</span>
+                                    <button type="submit" class="ml-auto btn btn-danger btn-sm" name="id" value="${newsVo.id}">删除</button>
                                 </div>
                             </form>
                         </li>

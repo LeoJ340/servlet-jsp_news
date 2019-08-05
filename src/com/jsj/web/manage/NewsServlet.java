@@ -1,6 +1,7 @@
 package com.jsj.web.manage;
 
 import com.jsj.entity.News;
+import com.jsj.entity.NewsVo;
 import com.jsj.factory.ServiceFactory;
 import com.jsj.service.NewsService;
 
@@ -19,8 +20,8 @@ public class NewsServlet extends HttpServlet {
     private NewsService newsService = ServiceFactory.getNewsService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<News> allNews = newsService.getAllNews();
-        request.getSession().setAttribute("allNews",allNews);
+        List<NewsVo> allNewsVo = newsService.getAllNewsVo();
+        request.getSession().setAttribute("allNewsVo",allNewsVo);
         request.getRequestDispatcher("/admin/manage/news.jsp").forward(request,response);
     }
 

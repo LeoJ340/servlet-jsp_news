@@ -3,9 +3,9 @@ package com.jsj.entity;
 import java.util.List;
 
 /**
- * 新闻分类所属的新闻列表
+ * 新闻分类所属的新闻列表（5条）
  */
-public class NewsVm {
+public class NewsCateVo {
 
     private Integer cateId;
 
@@ -39,7 +39,7 @@ public class NewsVm {
 
     @Override
     public String toString() {
-        return "NewsVm{" +
+        return "NewsCateVo{" +
                 "cateId=" + cateId +
                 ", name='" + name + '\'' +
                 ", news=" + news +
