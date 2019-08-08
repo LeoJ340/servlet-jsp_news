@@ -13,7 +13,7 @@
   <%@include file="header.jsp"%>
   <div class="container mt-3 main">
     <div class="d-flex flex-wrap">
-      <c:forEach items="${sessionScope.allNewsCateVo}" var="NewsCateVo">
+      <c:forEach items="${requestScope.allNewsCateVo}" var="NewsCateVo">
         <div class="news w-50 p-2">
           <div class="d-flex">
             <h3>${NewsCateVo.name}</h3>

@@ -22,7 +22,7 @@ public class IndexServlet extends HttpServlet {
         List<NewsCate> allCate = newsCateService.getAllCate();
         request.getSession().setAttribute("allCate",allCate);
         List<NewsCateVo> allNewsCateVo = newsCateService.getNewsCateVoList();
-        request.getSession().setAttribute("allNewsCateVo", allNewsCateVo);
+        request.setAttribute("allNewsCateVo", allNewsCateVo);
         request.getRequestDispatcher("index.jsp").forward(request,response);
     }
 }

@@ -20,7 +20,7 @@ public class NewsCateServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NewsCate> allCate = newsCateService.getAllCate();
-        request.getSession().setAttribute("allCate",allCate);
+        request.setAttribute("allCate",allCate);
         request.getRequestDispatcher("/admin/manage/newsCate.jsp").forward(request,response);
     }
 

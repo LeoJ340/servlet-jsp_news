@@ -6,7 +6,7 @@
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">管理系统</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="${pageContext.request.contextPath}/admin/manage/index.jsp">管理系统</a>
     <ul class="navbar-nav px-3">
         <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/admin">注销</a>

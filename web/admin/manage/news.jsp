@@ -17,7 +17,7 @@
         <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex flex-column pt-3 pb-5 mb-3">
                 <ul>
-                    <c:forEach items="${sessionScope.allNewsVo}" var="newsVo">
+                    <c:forEach items="${requestScope.allNewsVo}" var="newsVo">
                         <li class="pt-3 pb-1 border-top d-block">
                             <form class="d-flex flex-column" method="post" action="${pageContext.request.contextPath}/admin/manage/news">
                                 <h3>

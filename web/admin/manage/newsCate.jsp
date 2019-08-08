@@ -29,7 +29,7 @@
                     <button type="submit" name="method" value="insert" class="btn btn-dark btn-sm ml-5">添加</button>
                 </form>
                 <ul>
-                    <c:forEach items="${sessionScope.allCate}" var="cate">
+                    <c:forEach items="${requestScope.allCate}" var="cate">
                         <li class="p-3 border-top">
                             <form class="row" method="post" action="${pageContext.request.contextPath}/admin/manage/newsCate">
                                 <input type="text" disabled="disabled" value="${cate.name}" class="${cate.id}" name="name" />

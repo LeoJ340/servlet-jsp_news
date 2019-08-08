@@ -23,7 +23,7 @@
                     新闻分类：
                     <label>
                         <select class="mt-4" name="cate">
-                            <c:forEach items="${sessionScope.allCate}" var="cate">
+                            <c:forEach items="${requestScope.allCate}" var="cate">
                                 <option value="${cate.id}">${cate.name}</option>
                             </c:forEach>
                         </select>

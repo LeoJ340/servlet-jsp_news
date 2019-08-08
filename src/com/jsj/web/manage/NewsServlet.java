@@ -21,7 +21,7 @@ public class NewsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NewsVo> allNewsVo = newsService.getAllNewsVo();
-        request.getSession().setAttribute("allNewsVo",allNewsVo);
+        request.setAttribute("allNewsVo",allNewsVo);
         request.getRequestDispatcher("/admin/manage/news.jsp").forward(request,response);
     }
 

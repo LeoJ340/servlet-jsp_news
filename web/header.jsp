@@ -8,7 +8,7 @@
 <body>
 <header class="bg-dark">
     <div class="container d-flex">
-        <a href="index.jsp">首页</a>
+        <a href="${pageContext.request.contextPath}/">首页</a>
         <div class="flex-grow-1 d-flex justify-content-end">
             <c:choose>
                 <c:when test="${empty sessionScope.userStatus}">
