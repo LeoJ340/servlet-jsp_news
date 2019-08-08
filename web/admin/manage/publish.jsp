@@ -18,7 +18,8 @@
             <div class="d-flex flex-column pt-3 pb-5 mb-3">
                 <form method="post" action="${pageContext.request.contextPath}/admin/manage/publish">
                     <input type="text" maxlength="50" placeholder="请输入标题" class="w-100 pl-3 mt-3 mb-3 title" name="title" />
-                    <textarea name="content" id="editor"></textarea>
+                    <div id="contentEidtor"></div>
+                    <textarea name="content" id="content" style="width: 100%;height: 75px"></textarea>
                     新闻分类：
                     <label>
                         <select class="mt-4" name="cate">
@@ -36,19 +37,16 @@
 </div>
 <script src="../../js/jquery.min.js"></script>
 <script src="../../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-<script src="../../ckeditor5-build-classic/build/ckeditor.js"></script>
+<script src="../../wangEditor/wangEditor.min.js"></script>
 <script>
-    let editor;
-    ClassicEditor
-        .create(document.querySelector('#editor'),{
-            removePlugins: [ 'MediaEmbed' ]
-        })
-        .then(newEditor => {
-            editor = newEditor;
-        })
-        .catch(error => {
-            console.error(error);
-        });
+    const E = window.wangEditor;
+    const editor = new E('#contentEidtor');
+    const $text1 = $('#content');
+    editor.customConfig.onchange = function(html) {
+        $text1.val(html)
+    };
+    editor.create();
+    $text1.val(editor.txt.html())
 </script>
 </body>
 </html>

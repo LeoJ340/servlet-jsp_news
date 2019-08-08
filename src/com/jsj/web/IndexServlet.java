@@ -19,7 +19,6 @@ public class IndexServlet extends HttpServlet {
     private NewsCateService newsCateService = ServiceFactory.getNewsCateService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         List<NewsCate> allCate = newsCateService.getAllCate();
         request.getSession().setAttribute("allCate",allCate);
         List<NewsCateVo> allNewsCateVo = newsCateService.getNewsCateVoList();

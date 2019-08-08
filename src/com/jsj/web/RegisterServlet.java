@@ -20,8 +20,6 @@ public class RegisterServlet extends HttpServlet {
     private UserService userService = ServiceFactory.getUserService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             User user = new User();
             user.setUsername(request.getParameter("username"));

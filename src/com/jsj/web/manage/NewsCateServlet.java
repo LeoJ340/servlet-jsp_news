@@ -26,8 +26,6 @@ public class NewsCateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             if (request.getParameter("method")!=null&&request.getParameter("method").equals("insert")){
                 //添加新闻分类

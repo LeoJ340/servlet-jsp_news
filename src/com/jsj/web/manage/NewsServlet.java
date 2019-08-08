@@ -30,8 +30,6 @@ public class NewsServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             Integer id = Integer.valueOf(request.getParameter("id"));
             int res = newsService.deleteNewsById(id);

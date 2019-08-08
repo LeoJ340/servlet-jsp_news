@@ -36,8 +36,6 @@ public class PublishNewsServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             Admin admin = (Admin) request.getSession().getAttribute("admin");
             News news = new News();
@@ -46,6 +44,7 @@ public class PublishNewsServlet extends HttpServlet {
             news.setCateId(Integer.valueOf(request.getParameter("cate")));
             news.setTime(new Date());
             news.setContent(request.getParameter("content"));
+            System.out.println(news);
             int res = newsService.publish(news);
             if (res>0){
                 out.println("新闻发表成功");

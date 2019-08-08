@@ -18,8 +18,6 @@ public class AdminServlet extends HttpServlet {
     private AdminService adminService = ServiceFactory.getAdminService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             String username = request.getParameter("username");
             String password = request.getParameter("password");
