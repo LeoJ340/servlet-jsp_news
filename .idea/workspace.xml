@@ -7,82 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="103579e1-d5ec-447a-b693-14f30491891f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/jsj/filter/CharacterEncodingFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/wangEditor/fonts/w-e-icon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/wangEditor/wangEditor.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/wangEditor/wangEditor.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/wangEditor/wangEditor.min.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/AdminServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsCateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsCateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/manage/PublishNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/PublishNewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/manage/publish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/manage/publish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/ckeditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/ckeditor.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/af.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ast.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/az.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/de-ch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/en-au.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/eo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/gu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/kn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ku.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ne.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/no.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/oc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/pt-br.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/si.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/sq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/sr-latn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/tt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/ug.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/zh-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/build/translations/zh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/ckeditor5-build-classic/package.json" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,17 +20,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/header.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -225,39 +140,6 @@
             <path>
               <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
               <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jsj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jsj" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jsj" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jsj" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="manage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -277,7 +159,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/md_image" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -443,7 +325,7 @@
       <workItem from="1564546194379" duration="2470000" />
       <workItem from="1564993806526" duration="4209000" />
       <workItem from="1565093225169" duration="19000" />
-      <workItem from="1565252133455" duration="4365000" />
+      <workItem from="1565252133455" duration="4819000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1560082699298</created>
@@ -606,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565011765393</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="更换富文本编辑器">
+      <created>1565257838895</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1565257838895</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -642,13 +531,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165494000" />
+    <option name="totallyTimeSpent" value="165948000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.22453083" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.22453083" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -658,7 +546,7 @@
       <window_info id="Web" order="7" sideWeight="0.50708216" side_tool="true" weight="0.20308311" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.49716714" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49716714" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -749,16 +637,10 @@
     <MESSAGE value="Update README.md" />
     <MESSAGE value="change model、admin logout" />
     <MESSAGE value="命名修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="命名修改" />
+    <MESSAGE value="更换富文本编辑器" />
+    <option name="LAST_COMMIT_MESSAGE" value="更换富文本编辑器" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/jsj/service/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jsj/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1138,10 +1020,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/hello.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        <state relative-caret-position="308">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
         </state>
       </provider>
     </entry>

@@ -17,7 +17,7 @@
         新闻分类管理：对新闻分类进行增删改操作。
         新闻管理：对新闻文章数据进行删除操作。
 
-### 结果截图展示
+### 结果展示
 #### 首页：
 ![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/index.png)
 #### 新闻详细页面
