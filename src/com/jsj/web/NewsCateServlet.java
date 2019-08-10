@@ -22,6 +22,8 @@ public class NewsCateServlet extends HttpServlet {
     private NewsCateService newsCateService = ServiceFactory.getNewsCateService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<NewsCate> allCate = newsCateService.getAllCate();
+        request.setAttribute("allCate",allCate);
         Integer cateId = Integer.valueOf(request.getParameter("cateId"));
         NewsCate newsCate = newsCateService.getNewsCateById(cateId);
         List<News> newsList = newsService.getNewsListByCate(cateId);

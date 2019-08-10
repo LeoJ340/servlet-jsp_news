@@ -31,7 +31,7 @@
                 <ul>
                     <c:forEach items="${requestScope.allCate}" var="cate">
                         <li class="p-3 border-top">
-                            <form class="row" method="post" action="${pageContext.request.contextPath}/admin/manage/newsCate">
+                            <form class="row" method="post" action="${pageContext.request.contextPath}/admin/manage/newsCate" onsubmit="return confirmDelete()">
                                 <input type="text" disabled="disabled" value="${cate.name}" class="${cate.id}" name="name" />
                                 <div style="display: none;" class="ml-2 btn-group btn-group-sm ${cate.id}">
                                     <button type="submit" class="btn btn-dark" name="id" value="${cate.id}">保存</button>
@@ -63,6 +63,9 @@
         input.setAttribute("disabled","disabled");
         let editButton = document.getElementsByClassName(id)[1];
         editButton.style.display = "none";
+    }
+    function confirmDelete() {
+        return window.confirm("你确认删除该分类及其所有新闻吗？");
     }
 </script>
 </body>

@@ -2,10 +2,12 @@ package com.jsj.service.Impl;
 
 import com.jsj.dao.NewsCateDao;
 import com.jsj.dao.NewsDao;
+import com.jsj.entity.News;
 import com.jsj.entity.NewsCateVo;
 import com.jsj.entity.NewsCate;
 import com.jsj.factory.DaoFactory;
 import com.jsj.service.NewsCateService;
+import com.jsj.utils.JdbcUtils;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -73,6 +75,27 @@ public class NewsCateServiceImpl implements NewsCateService {
 
     @Override
     public int delete(Integer id) {
+        try {
+            JdbcUtils.beginTransaction();
+            List<News> newsList = newsDao.getNewsListByCate(id);
+            for (News news:newsList) {
+                newsDao.deleteById(news.getId());
+            }
+            int res = newsCateDao.deleteById(id);
+            if (res<1){
+                try {
+                    JdbcUtils.rollbackTransaction();
+                    return 0;
+                } catch (SQLException ignored) {}
+            }
+            JdbcUtils.commitTransaction();
+            return res;
+        } catch (SQLException e) {
+            try {
+                JdbcUtils.rollbackTransaction();
+                return 0;
+            } catch (SQLException ignored) {}
+        }
         try {
             return newsCateDao.deleteById(id);
         } catch (SQLException e) {

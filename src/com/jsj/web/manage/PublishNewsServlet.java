@@ -44,7 +44,6 @@ public class PublishNewsServlet extends HttpServlet {
             news.setCateId(Integer.valueOf(request.getParameter("cate")));
             news.setTime(new Date());
             news.setContent(request.getParameter("content"));
-            System.out.println(news);
             int res = newsService.publish(news);
             if (res>0){
                 out.println("新闻发表成功");

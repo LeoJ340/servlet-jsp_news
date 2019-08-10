@@ -60,11 +60,11 @@
      * @returns {boolean}
      */
     function verify(){
-        var username = $("#username").val();
-        var password = $("#password").val();
-        var passwordAgain = $("#passwordAgain").val();
-        var email = $("#email").val();
-        var telNumber = $("#telNumber").val();
+        let username = $("#username").val();
+        let password = $("#password").val();
+        let passwordAgain = $("#passwordAgain").val();
+        let email = $("#email").val();
+        let telNumber = $("#telNumber").val();
         if (username!==""&&password!==""&&passwordAgain!==""&&email!==""&&telNumber!==""){
             console.log(password+"==="+passwordAgain);
             if (password===passwordAgain){

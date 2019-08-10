@@ -1,6 +1,5 @@
 package com.jsj.web.manage;
 
-import com.jsj.entity.News;
 import com.jsj.entity.NewsVo;
 import com.jsj.factory.ServiceFactory;
 import com.jsj.service.NewsService;
