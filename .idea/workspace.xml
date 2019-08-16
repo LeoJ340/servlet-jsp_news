@@ -6,69 +6,18 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="103579e1-d5ec-447a-b693-14f30491891f" name="Default Changelist" comment="修复富文本编辑器乱码问题，视图及控制层重整理">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/ManageServlet.java" afterDir="false" />
+    <list default="true" id="103579e1-d5ec-447a-b693-14f30491891f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/filter/AdminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/filter/AdminFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/filter/CharacterEncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/filter/CharacterEncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/AdminServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/NewsCateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/NewsCateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/NewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/NewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsCateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsCateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/NewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jsj/web/manage/PublishNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jsj/web/manage/PublishNewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/manage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/admin/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/manage/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/admin/manage/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/manage/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/admin/manage/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/manage/nav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/admin/manage/nav.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/manage/news.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/admin/manage/news.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/manage/newsCate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/admin/manage/newsCate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/admin/manage/publish.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/admin/manage/publish.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/js/bootstrap.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/newscate.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/newsCate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/hello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/images/logo.webp" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/images/logo.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/news.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/news.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/newsCate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/newsCate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/view/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/bootstrap-4.3.1-dist/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/wangEditor/fonts/w-e-icon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/wangEditor/fonts/w-e-icon.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/wangEditor/wangEditor.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/wangEditor/wangEditor.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/wangEditor/wangEditor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/wangEditor/wangEditor.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/wangEditor/wangEditor.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/wangEditor/wangEditor.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-4.3.1-dist/js/bootstrap.js.map" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,59 +30,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/admin/manage/publish.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-              <folding>
-                <element signature="n#style#0;n#textarea#0;n#form#0;n#div#0;n#main#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/admin/manage/newsCate.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/jsj/web/manage/NewsCateServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-871">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/view/register.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="12" column="104" selection-start-line="12" selection-start-column="104" selection-end-line="12" selection-end-column="104" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -254,44 +151,6 @@
             <path>
               <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
               <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jsj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jsj" type="462c0819:PsiDirectoryNode" />
-              <item name="filter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jsj" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jsj" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="manage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -299,66 +158,12 @@
               <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap-4.3.1-dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap-4.3.1-dist" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap-4.3.1-dist" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
               <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="servlet&amp;jsp-news" type="b2602c69:ProjectViewProjectNode" />
-              <item name="servlet&amp;jsp-news" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="manage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -541,7 +346,7 @@
       <workItem from="1565852271215" duration="325000" />
       <workItem from="1565921551545" duration="1551000" />
       <workItem from="1565923275134" duration="952000" />
-      <workItem from="1565924371234" duration="16758000" />
+      <workItem from="1565924371234" duration="17081000" />
     </task>
     <task id="LOCAL-00001" summary="Initialization">
       <created>1560082699298</created>
@@ -732,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565440342453</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="修复富文本编辑器乱码问题，视图及控制层重整理">
+      <created>1565942930528</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1565942930528</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -768,12 +580,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200242000" />
+    <option name="totallyTimeSpent" value="200565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49150142" visible="true" weight="0.2533512" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49150142" visible="true" weight="0.2533512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -794,7 +606,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="13" sideWeight="0.49932975" visible="true" weight="0.32152975" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49932975" weight="0.32152975" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1224,8 +1036,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jsj/web/manage/NewsCateServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-871">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="405">
+          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
