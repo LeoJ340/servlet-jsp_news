@@ -4,6 +4,7 @@ import com.jsj.entity.User;
 import com.jsj.factory.ServiceFactory;
 import com.jsj.service.UserService;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ public class RegisterServlet extends HttpServlet {
     private UserService userService = ServiceFactory.getUserService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             User user = new User();
             user.setUsername(request.getParameter("username"));
@@ -27,19 +29,22 @@ public class RegisterServlet extends HttpServlet {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             try {
                 user.setBirthday(dateFormat.parse(request.getParameter("birthday")));
-            } catch (ParseException ignored) {
-            }
+            } catch (ParseException ignored) {}
             user.setEmail(request.getParameter("email"));
             user.setTelNumber(request.getParameter("telNumber"));
             int res = userService.register(user);
             if (res>0){
-                out.println("注册成功，3秒后跳转到首页！或现在去<a href='/login.jsp'>登录</a>");
-                response.setHeader("refresh", "2;url=/index.jsp");
+                out.println("注册成功，3秒后跳转到首页！或现在去<a href='/login'>登录</a>");
+                response.setHeader("refresh", "2;url=/");
             }else {
-                out.println("注册失败!");
-                response.setHeader("refresh", "2;url=/register.jsp");
+                out.println("注册失败!请<a href='/register'>重试</a>重试");
+                response.setHeader("refresh", "2;url=/register");
             }
         }
     }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/WEB-INF/view/register.jsp").forward(request,response);
+    }
 }

@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * 管理员认证拦截
+ */
 @WebFilter(urlPatterns = "/admin/manage/*")
 public class AdminFilter implements Filter {
 
@@ -17,8 +20,7 @@ public class AdminFilter implements Filter {
             filterChain.doFilter(servletRequest, servletResponse);
         else {
             response.setContentType("text/html;charset=UTF-8");
-            response.getWriter().println("您不是管理员，无权访问该资源！");
-            response.setHeader("refresh", "2;url=/admin/login.jsp");
+            response.getWriter().println("您不是管理员，无权访问该资源！请进行<a href='/admin'>管理员登录</a>");
         }
     }
 

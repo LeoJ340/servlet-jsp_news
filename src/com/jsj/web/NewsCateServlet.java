@@ -29,6 +29,6 @@ public class NewsCateServlet extends HttpServlet {
         List<News> newsList = newsService.getNewsListByCate(cateId);
         request.setAttribute("newsList",newsList);
         request.setAttribute("cateName",newsCate.getName());
-        request.getRequestDispatcher("newsCate.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/view/newsCate.jsp").forward(request,response);
     }
 }

@@ -23,6 +23,6 @@ public class IndexServlet extends HttpServlet {
         request.setAttribute("allCate",allCate);
         List<NewsCateVo> allNewsCateVo = newsCateService.getNewsCateVoList();
         request.setAttribute("allNewsCateVo", allNewsCateVo);
-        request.getRequestDispatcher("index.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request,response);
     }
 }

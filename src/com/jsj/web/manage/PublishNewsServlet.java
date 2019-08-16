@@ -27,15 +27,15 @@ public class PublishNewsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NewsCate> allCate = newsCateService.getAllCate();
         request.setAttribute("allCate",allCate);
-        request.getRequestDispatcher("/admin/manage/publish.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/view/admin/manage/publish.jsp").forward(request,response);
     }
-
 
     /**
      * 发表文章
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             Admin admin = (Admin) request.getSession().getAttribute("admin");
             News news = new News();
@@ -47,11 +47,10 @@ public class PublishNewsServlet extends HttpServlet {
             int res = newsService.publish(news);
             if (res>0){
                 out.println("新闻发表成功");
-                response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
             }else {
                 out.println("新闻发表失败");
-                response.setHeader("refresh", "2;url=/admin/manage/index.jsp");
             }
+            response.setHeader("refresh", "2;url=/admin/manage");
         }
     }
 

@@ -19,11 +19,12 @@ public class LoginServlet extends HttpServlet {
     private UserService userService = ServiceFactory.getUserService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             User user = userService.login(username,password);
-            if (user!=null){
+            if (user.getId()!=null){
                 if (request.getParameter("remember")!=null){
                     Cookie usernameCookie = new Cookie("rememberUsername",username);
                     usernameCookie.setMaxAge(7*24*60*60);
@@ -32,13 +33,13 @@ public class LoginServlet extends HttpServlet {
                     response.addCookie(usernameCookie);
                     response.addCookie(passwordCookie);
                 }
-                out.println("登录成功，3秒后跳转到首页！如果没有跳转请点<a href='/index'>这里</a>");
+                out.println("登录成功，3秒后跳转到首页！如果没有跳转请点<a href='/'>这里</a>");
                 request.getSession().setAttribute("userStatus",true);
                 request.getSession().setAttribute("user",user);
-                response.setHeader("refresh", "2;url=/index.jsp");
+                response.setHeader("refresh", "2;url=/");
             }else {
-                out.println("用户名或密码错误，请重试");
-                response.setHeader("refresh", "2;url=/login.jsp");
+                out.println("用户名或密码错误，请<a href='/login'>重试</a>");
+                response.setHeader("refresh", "2;url=/login");
             }
         }
     }
@@ -54,6 +55,6 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("rememberPassword",cookie.getValue());
             }
         }
-        request.getRequestDispatcher("login.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(request,response);
     }
 }

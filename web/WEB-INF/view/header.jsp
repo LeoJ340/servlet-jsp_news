@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -13,7 +13,7 @@
             <c:choose>
                 <c:when test="${empty sessionScope.userStatus}">
                     <a href="${pageContext.request.contextPath}/login">登录</a>
-                    <a href="register.jsp">注册</a>
+                    <a href="${pageContext.request.contextPath}/register">注册</a>
                 </c:when>
                 <c:otherwise>
                     <span>欢迎您！尊敬的用户</span>

@@ -21,7 +21,7 @@ public class NewsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NewsVo> allNewsVo = newsService.getAllNewsVo();
         request.setAttribute("allNewsVo",allNewsVo);
-        request.getRequestDispatcher("/admin/manage/news.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/view/admin/manage/news.jsp").forward(request,response);
     }
 
     /**
@@ -29,16 +29,16 @@ public class NewsServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             Integer id = Integer.valueOf(request.getParameter("id"));
             int res = newsService.deleteNewsById(id);
             if (res>0){
                 out.println("新闻删除成功");
-                response.setHeader("refresh", "2;url=/admin/manage/news");
             }else {
                 out.println("新闻删除失败");
-                response.setHeader("refresh", "2;url=/admin/manage/news");
             }
+            response.setHeader("refresh", "2;url=/admin/manage/news");
         }
     }
 

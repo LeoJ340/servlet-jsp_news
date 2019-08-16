@@ -27,6 +27,6 @@ public class NewsServlet extends HttpServlet {
         Integer newsId = Integer.valueOf(request.getParameter("newsId"));
         News news = newsService.getNewsById(newsId);
         request.setAttribute("news",news);
-        request.getRequestDispatcher("news.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/view/news.jsp").forward(request,response);
     }
 }

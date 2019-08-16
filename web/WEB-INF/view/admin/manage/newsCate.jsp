@@ -1,11 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>新闻分类管理</title>
-    <link rel="stylesheet" href="../../bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/manage.css">
     <style>
         input[disabled=disabled]{
             border: none;
@@ -31,15 +31,15 @@
                 <ul>
                     <c:forEach items="${requestScope.allCate}" var="cate">
                         <li class="p-3 border-top">
-                            <form class="row" method="post" action="${pageContext.request.contextPath}/admin/manage/newsCate" onsubmit="return confirmDelete()">
+                            <form class="row" method="post" action="${pageContext.request.contextPath}/admin/manage/newsCate">
                                 <input type="text" disabled="disabled" value="${cate.name}" class="${cate.id}" name="name" />
                                 <div style="display: none;" class="ml-2 btn-group btn-group-sm ${cate.id}">
                                     <button type="submit" class="btn btn-dark" name="id" value="${cate.id}">保存</button>
                                     <button type="button" class="btn btn-dark ml-3" onclick="cancel(${cate.id})">取消</button>
                                 </div>
                                 <div class="ml-auto btn-group btn-group-sm">
-                                    <button type="button" class="btn btn-info mr-3" onclick="edit(${cate.id})">编辑</button>
-                                    <button type="submit" class="btn btn-danger" name="id" value="${cate.id}" >删除</button>
+                                    <button type="button" class="btn btn-info mr-3" onclick="toEdit(${cate.id})">编辑</button>
+                                    <button type="submit" class="btn btn-danger" name="id" value="${cate.id}" onclick="return confirmDelete()">删除</button>
                                 </div>
                             </form>
                         </li>
@@ -49,10 +49,10 @@
         </main>
     </div>
 </div>
-<script src="../../js/jquery.min.js"></script>
-<script src="../../bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 <script>
-    function edit (id) {
+    function toEdit (id) {
         let input = document.getElementsByClassName(id)[0];
         input.removeAttribute("disabled");
         let editButton = document.getElementsByClassName(id)[1];
