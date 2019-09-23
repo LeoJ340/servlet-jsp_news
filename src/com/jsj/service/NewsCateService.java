@@ -9,7 +9,7 @@ public interface NewsCateService {
 
     List<NewsCate> getAllCate();
 
-    List<NewsCateVo> getNewsCateVoList();
+    List<NewsCateVo> getAllNewsCateVo(Integer length);
 
     NewsCate getNewsCateById(Integer id);
 

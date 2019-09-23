@@ -3,7 +3,6 @@ package com.jsj.dao.Impl;
 import com.jsj.dao.UserDao;
 import com.jsj.entity.User;
 import com.jsj.utils.JdbcUtils;
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import java.sql.*;
 

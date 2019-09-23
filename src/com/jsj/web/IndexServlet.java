@@ -21,8 +21,9 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NewsCate> allCate = newsCateService.getAllCate();
         request.setAttribute("allCate",allCate);
-        List<NewsCateVo> allNewsCateVo = newsCateService.getNewsCateVoList();
+        List<NewsCateVo> allNewsCateVo = newsCateService.getAllNewsCateVo(5);
         request.setAttribute("allNewsCateVo", allNewsCateVo);
         request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request,response);
     }
+
 }

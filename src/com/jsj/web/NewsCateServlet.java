@@ -2,6 +2,7 @@ package com.jsj.web;
 
 import com.jsj.entity.News;
 import com.jsj.entity.NewsCate;
+import com.jsj.entity.Page;
 import com.jsj.factory.ServiceFactory;
 import com.jsj.service.NewsCateService;
 import com.jsj.service.NewsService;
@@ -26,9 +27,11 @@ public class NewsCateServlet extends HttpServlet {
         request.setAttribute("allCate",allCate);
         Integer cateId = Integer.valueOf(request.getParameter("cateId"));
         NewsCate newsCate = newsCateService.getNewsCateById(cateId);
-        List<News> newsList = newsService.getNewsListByCate(cateId);
-        request.setAttribute("newsList",newsList);
-        request.setAttribute("cateName",newsCate.getName());
+        request.setAttribute("cate",newsCate);
+        int pageIndex = request.getParameter("pageIndex")!=null?Integer.valueOf(request.getParameter("pageIndex")):1;
+        int pageSize = request.getParameter("pageSize")!=null?Integer.valueOf(request.getParameter("pageSize")):10;
+        Page<News> newsPage = newsService.getNewsPageByCate(cateId,pageIndex,pageSize);
+        request.setAttribute("newsPage", newsPage);
         request.getRequestDispatcher("/WEB-INF/view/newsCate.jsp").forward(request,response);
     }
 }

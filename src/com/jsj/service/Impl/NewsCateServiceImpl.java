@@ -29,18 +29,18 @@ public class NewsCateServiceImpl implements NewsCateService {
     }
 
     @Override
-    public List<NewsCateVo> getNewsCateVoList() {
+    public List<NewsCateVo> getAllNewsCateVo(Integer length) {
         try {
-            List<NewsCateVo> newsCateVoList = new ArrayList<>();
+            List<NewsCateVo> allNewsCateVo = new ArrayList<>();
             List<NewsCate> newsAllCate = newsCateDao.getAll();
             for (NewsCate newsCate:newsAllCate ) {
                 NewsCateVo newsCateVo = new NewsCateVo();
                 newsCateVo.setCateId(newsCate.getId());
                 newsCateVo.setName(newsCate.getName());
-                newsCateVo.setNews(newsDao.getNewsListByCate(newsCate.getId()));
-                newsCateVoList.add(newsCateVo);
+                newsCateVo.setNews(newsDao.getNewsListByCate(newsCate.getId(),0,length));
+                allNewsCateVo.add(newsCateVo);
             }
-            return newsCateVoList;
+            return allNewsCateVo;
         }catch (SQLException e){
             return null;
         }
@@ -77,7 +77,7 @@ public class NewsCateServiceImpl implements NewsCateService {
     public int delete(Integer id) {
         try {
             JdbcUtils.beginTransaction();
-            List<News> newsList = newsDao.getNewsListByCate(id);
+            List<News> newsList = newsDao.getNewsListByCate(id,0,newsDao.getCountByCate(id));
             for (News news:newsList) {
                 newsDao.deleteById(news.getId());
             }

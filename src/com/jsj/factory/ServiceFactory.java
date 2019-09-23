@@ -10,18 +10,10 @@ import java.util.Properties;
 
 public class ServiceFactory {
 
-    // 饿汉式单例模式设计dao工厂
-    private static ServiceFactory serviceFactory = new ServiceFactory();
-
     private ServiceFactory(){
-
     }
 
-    public static ServiceFactory getServiceFactory(){
-        return serviceFactory;
-    }
-
-    private static Properties properties = null;
+    private static Properties properties;
 
     static {
         InputStream inputStream = DaoFactory.class.getClassLoader().getResourceAsStream("service.properties");

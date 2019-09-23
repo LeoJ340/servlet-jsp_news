@@ -22,11 +22,4 @@ public class NewsCate {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "NewsCate{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }

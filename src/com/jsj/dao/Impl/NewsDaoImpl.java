@@ -10,16 +10,71 @@ import java.util.List;
 
 public class NewsDaoImpl implements NewsDao {
 
-    /**
-     * @return 指定分类id的5条新闻列表
-     */
     @Override
-    public List<News> getNewsListByCate(Integer cateId) throws SQLException {
+    public int getCount() throws SQLException {
+        int res = -1;
+        Connection connection = JdbcUtils.getConnection();
+        String sql = "select count(*) from news";
+        try (Statement statement = connection.createStatement()){
+            try (ResultSet resultSet = statement.executeQuery(sql)){
+                if (resultSet.next()){
+                    res = resultSet.getInt(1);
+                }
+            }
+        }
+        return res;
+    }
+
+    @Override
+    public int getCountByCate(Integer cateId) throws SQLException {
+        int res = -1;
+        Connection connection = JdbcUtils.getConnection();
+        String sql = "select count(*) from news where cate_id = ? order by time desc";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.setInt(1,cateId);
+            try (ResultSet resultSet = preparedStatement.executeQuery()){
+                if (resultSet.next()){
+                    res = resultSet.getInt(1);
+                }
+            }
+        }
+        return res;
+    }
+
+    @Override
+    public List<News> getNewsList(Integer beginIndex, Integer length) throws SQLException {
         List<News> newsList = new ArrayList<>();
         Connection connection = JdbcUtils.getConnection();
-        String sql = "select * from news where cate_id = ? limit 0 , 5";
+        String sql = "select * from news order by time desc limit ?, ?";
+        try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+            preparedStatement.setInt(1, beginIndex);
+            preparedStatement.setInt(2, length);
+            try(ResultSet resultSet = preparedStatement.executeQuery()){
+                while (resultSet.next()){
+                    News news = new News();
+                    news.setId(resultSet.getInt("id"));
+                    news.setCateId(resultSet.getInt("cate_id"));
+                    news.setTitle(resultSet.getString("title"));
+                    news.setAuthor(resultSet.getString("author"));
+                    news.setTime(resultSet.getDate("time"));
+                    news.setContent(resultSet.getString("content"));
+                    newsList.add(news);
+                }
+            }
+        }
+        JdbcUtils.releaseConnection(connection);
+        return newsList;
+    }
+
+    @Override
+    public List<News> getNewsListByCate(Integer cateId,Integer beginIndex,Integer length) throws SQLException {
+        List<News> newsList = new ArrayList<>();
+        Connection connection = JdbcUtils.getConnection();
+        String sql = "select * from news where cate_id = ? limit ?, ?";
         try(PreparedStatement preparedStatement = connection.prepareStatement(sql)){
             preparedStatement.setInt(1,cateId);
+            preparedStatement.setInt(2, beginIndex);
+            preparedStatement.setInt(3, length);
             try(ResultSet resultSet = preparedStatement.executeQuery()){
                 while (resultSet.next()){
                     News news = new News();

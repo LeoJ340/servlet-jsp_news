@@ -64,15 +64,4 @@ public class News {
         this.content = content;
     }
 
-    @Override
-    public String toString() {
-        return "News{" +
-                "id=" + id +
-                ", cateId=" + cateId +
-                ", title='" + title + '\'' +
-                ", time=" + time +
-                ", author='" + author + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }
 }

@@ -1,6 +1,7 @@
 package com.jsj.web.manage;
 
 import com.jsj.entity.NewsVo;
+import com.jsj.entity.Page;
 import com.jsj.factory.ServiceFactory;
 import com.jsj.service.NewsService;
 
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 
 @WebServlet("/admin/manage/news")
 public class NewsServlet extends HttpServlet {
@@ -19,8 +19,10 @@ public class NewsServlet extends HttpServlet {
     private NewsService newsService = ServiceFactory.getNewsService();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<NewsVo> allNewsVo = newsService.getAllNewsVo();
-        request.setAttribute("allNewsVo",allNewsVo);
+        int pageIndex = request.getParameter("pageIndex")!=null?Integer.valueOf(request.getParameter("pageIndex")):1;
+        int pageSize = request.getParameter("pageSize")!=null?Integer.valueOf(request.getParameter("pageSize")):10;
+        Page<NewsVo> newsVoPage = newsService.getNewsVoPage(pageIndex,pageSize);
+        request.setAttribute("newsVoPage", newsVoPage);
         request.getRequestDispatcher("/WEB-INF/view/admin/manage/news.jsp").forward(request,response);
     }
 

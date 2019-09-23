@@ -64,15 +64,4 @@ public class User {
         this.telNumber = telNumber;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", birthday=" + birthday +
-                ", email='" + email + '\'' +
-                ", telNumber='" + telNumber + '\'' +
-                '}';
-    }
 }

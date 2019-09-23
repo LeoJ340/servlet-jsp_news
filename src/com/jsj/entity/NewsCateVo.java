@@ -3,7 +3,7 @@ package com.jsj.entity;
 import java.util.List;
 
 /**
- * 新闻分类所属的新闻列表（5条）
+ * 新闻分类所属的新闻列表
  */
 public class NewsCateVo {
 
@@ -37,12 +37,4 @@ public class NewsCateVo {
         this.news = news;
     }
 
-    @Override
-    public String toString() {
-        return "NewsCateVo{" +
-                "cateId=" + cateId +
-                ", name='" + name + '\'' +
-                ", news=" + news +
-                '}';
-    }
 }

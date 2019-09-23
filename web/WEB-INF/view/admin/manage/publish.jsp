@@ -19,7 +19,7 @@
                 <form method="post" action="${pageContext.request.contextPath}/admin/manage/publish">
                     <input type="text" maxlength="50" placeholder="请输入标题" class="w-100 pl-3 mt-3 mb-3 title" name="title" />
                     <div id="contentEidtor"></div>
-                    <textarea name="content" id="content" style="width: 100%;height: 75px"></textarea>
+                    <textarea name="content" id="content" style="display:none;"></textarea>
                     新闻分类：
                     <label>
                         <select class="mt-4" name="cate">
