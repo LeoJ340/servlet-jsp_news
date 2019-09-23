@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
 
-    private UserService userService = ServiceFactory.getUserService();
+    private UserService userService = (UserService) ServiceFactory.getService("UserService");
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=UTF-8");

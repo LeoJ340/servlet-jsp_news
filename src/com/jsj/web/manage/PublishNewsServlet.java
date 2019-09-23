@@ -20,9 +20,9 @@ import java.util.List;
 @WebServlet("/admin/manage/publish")
 public class PublishNewsServlet extends HttpServlet {
 
-    private NewsCateService newsCateService = ServiceFactory.getNewsCateService();
+    private NewsCateService newsCateService = (NewsCateService) ServiceFactory.getService("NewsCateService");
 
-    private NewsService newsService = ServiceFactory.getNewsService();
+    private NewsService newsService = (NewsService) ServiceFactory.getService("NewsService");
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NewsCate> allCate = newsCateService.getAllCate();

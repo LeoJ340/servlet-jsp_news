@@ -16,7 +16,7 @@ import java.io.PrintWriter;
 @WebServlet("/admin/manage/news")
 public class NewsServlet extends HttpServlet {
 
-    private NewsService newsService = ServiceFactory.getNewsService();
+    private NewsService newsService = (NewsService) ServiceFactory.getService("NewsService");
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int pageIndex = request.getParameter("pageIndex")!=null?Integer.valueOf(request.getParameter("pageIndex")):1;

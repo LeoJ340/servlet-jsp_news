@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class AdminServiceImpl implements AdminService {
 
-    private AdminDao adminDao = DaoFactory.getAdminDao();
+    private AdminDao adminDao = (AdminDao) DaoFactory.getDao("AdminDao");
 
     @Override
     public Admin login(String username, String password) {

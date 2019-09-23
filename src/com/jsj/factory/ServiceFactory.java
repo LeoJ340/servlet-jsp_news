@@ -1,10 +1,5 @@
 package com.jsj.factory;
 
-import com.jsj.service.AdminService;
-import com.jsj.service.NewsCateService;
-import com.jsj.service.NewsService;
-import com.jsj.service.UserService;
-
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -25,44 +20,12 @@ public class ServiceFactory {
         }
     }
 
-    public static UserService getUserService(){
-        UserService userService = null;
+    public static Object getService(String serviceName){
         try {
-            userService = (UserService) Class.forName(properties.getProperty("UserService")).newInstance();
+            return Class.forName(properties.getProperty(serviceName)).newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            e.printStackTrace();
+            return null;
         }
-        return userService;
-    }
-
-    public static NewsCateService getNewsCateService(){
-        NewsCateService newsCateService = null;
-        try {
-            newsCateService = (NewsCateService) Class.forName(properties.getProperty("NewsCateService")).newInstance();
-        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return newsCateService;
-    }
-
-    public static NewsService getNewsService(){
-        NewsService newsService = null;
-        try {
-            newsService = (NewsService) Class.forName(properties.getProperty("NewsService")).newInstance();
-        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return newsService;
-    }
-
-    public static AdminService getAdminService(){
-        AdminService adminService = null;
-        try {
-            adminService = (AdminService) Class.forName(properties.getProperty("AdminService")).newInstance();
-        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return adminService;
     }
 
 }

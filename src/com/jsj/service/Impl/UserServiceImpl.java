@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class UserServiceImpl implements UserService {
 
-    private UserDao userDao = DaoFactory.getUserDao();
+    private UserDao userDao = (UserDao) DaoFactory.getDao("UserDao");
 
     @Override
     public int register(User user) {

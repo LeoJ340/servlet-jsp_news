@@ -18,9 +18,9 @@ import java.util.List;
 @WebServlet("/newsCate")
 public class NewsCateServlet extends HttpServlet {
 
-    private NewsService newsService = ServiceFactory.getNewsService();
+    private NewsService newsService = (NewsService) ServiceFactory.getService("NewsService");
 
-    private NewsCateService newsCateService = ServiceFactory.getNewsCateService();
+    private NewsCateService newsCateService = (NewsCateService) ServiceFactory.getService("NewsCateService");
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NewsCate> allCate = newsCateService.getAllCate();

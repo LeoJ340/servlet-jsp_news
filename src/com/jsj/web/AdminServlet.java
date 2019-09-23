@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 @WebServlet("/admin")
 public class AdminServlet extends HttpServlet {
 
-    private AdminService adminService = ServiceFactory.getAdminService();
+    private AdminService adminService = (AdminService) ServiceFactory.getService("AdminService");
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=UTF-8");

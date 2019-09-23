@@ -15,9 +15,9 @@ import java.util.List;
 
 public class NewsCateServiceImpl implements NewsCateService {
 
-    private NewsCateDao newsCateDao = DaoFactory.getNewsCateDao();
+    private NewsCateDao newsCateDao = (NewsCateDao) DaoFactory.getDao("NewsCateDao");
 
-    private NewsDao newsDao = DaoFactory.getNewsDao();
+    private NewsDao newsDao = (NewsDao) DaoFactory.getDao("NewsDao");
 
     @Override
     public List<NewsCate> getAllCate() {

@@ -14,9 +14,9 @@ import java.util.List;
 
 public class NewsServiceImpl implements NewsService {
 
-    private NewsDao newsDao = DaoFactory.getNewsDao();
+    private NewsDao newsDao = (NewsDao) DaoFactory.getDao("NewsDao");
 
-    private NewsCateDao newsCateDao = DaoFactory.getNewsCateDao();
+    private NewsCateDao newsCateDao = (NewsCateDao) DaoFactory.getDao("NewsCateDao");
 
     @Override
     public Page<NewsVo> getNewsVoPage(Integer pageIndex, Integer pageSize) {
