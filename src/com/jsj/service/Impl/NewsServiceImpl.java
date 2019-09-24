@@ -8,7 +8,6 @@ import com.jsj.entity.Page;
 import com.jsj.factory.DaoFactory;
 import com.jsj.service.NewsService;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class NewsServiceImpl implements NewsService {
         try {
             newsVoPage.setTotalCount(newsDao.getCount());
             newsVoPage.setTotalPage((int) Math.ceil((double) newsDao.getCount() / (double) pageSize));
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
         return newsVoPage;
@@ -42,7 +41,7 @@ public class NewsServiceImpl implements NewsService {
         try {
             newsPage.setTotalCount(newsDao.getCountByCate(cateId));
             newsPage.setTotalPage((int) Math.ceil((double) newsDao.getCountByCate(cateId) / (double) pageSize));
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
         return newsPage;
@@ -64,7 +63,7 @@ public class NewsServiceImpl implements NewsService {
                 newsVo.setCateId(news.getCateId());
                 newsVoList.add(newsVo);
             }
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
         return newsVoList;
@@ -74,7 +73,7 @@ public class NewsServiceImpl implements NewsService {
     public List<News> getNewsListByCate(Integer cateId,Integer pageIndex,Integer length) {
         try {
             return newsDao.getNewsListByCate(cateId,pageIndex,length);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -83,7 +82,7 @@ public class NewsServiceImpl implements NewsService {
     public News getNewsById(Integer id) {
         try {
             return newsDao.getById(id);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -92,7 +91,7 @@ public class NewsServiceImpl implements NewsService {
     public int publish(News news) {
         try {
             return newsDao.insert(news);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return -1;
         }
     }
@@ -114,7 +113,7 @@ public class NewsServiceImpl implements NewsService {
                 allNewsVo.add(newsVo);
             }
             return allNewsVo;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -123,7 +122,7 @@ public class NewsServiceImpl implements NewsService {
     public int deleteNewsById(Integer id) {
         try {
             return newsDao.deleteById(id);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return -1;
         }
     }

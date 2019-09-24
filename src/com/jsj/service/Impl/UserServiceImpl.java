@@ -5,8 +5,6 @@ import com.jsj.entity.User;
 import com.jsj.factory.DaoFactory;
 import com.jsj.service.UserService;
 
-import java.sql.SQLException;
-
 public class UserServiceImpl implements UserService {
 
     private UserDao userDao = (UserDao) DaoFactory.getDao("UserDao");
@@ -15,7 +13,7 @@ public class UserServiceImpl implements UserService {
     public int register(User user) {
         try {
             return userDao.insert(user);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return -1;
         }
     }
@@ -24,7 +22,7 @@ public class UserServiceImpl implements UserService {
     public User login(String username, String password) {
         try {
             return userDao.getUserByPassword(username,password);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
     }

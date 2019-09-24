@@ -19,8 +19,14 @@ public class NewsServlet extends HttpServlet {
     private NewsService newsService = (NewsService) ServiceFactory.getService("NewsService");
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int pageIndex = request.getParameter("pageIndex")!=null?Integer.valueOf(request.getParameter("pageIndex")):1;
-        int pageSize = request.getParameter("pageSize")!=null?Integer.valueOf(request.getParameter("pageSize")):10;
+        int pageIndex = 1;
+        if (request.getParameter("pageIndex") == null){
+            pageIndex = Integer.valueOf(request.getParameter("pageIndex")) < 1 ? 1 : Integer.valueOf(request.getParameter("pageIndex"));
+        }
+        int pageSize = 10;
+        if (request.getParameter("pageSize") == null){
+            pageSize = Integer.valueOf(request.getParameter("pageSize")) < 1 ? 10 : Integer.valueOf(request.getParameter("pageSize"));
+        }
         Page<NewsVo> newsVoPage = newsService.getNewsVoPage(pageIndex,pageSize);
         request.setAttribute("newsVoPage", newsVoPage);
         request.getRequestDispatcher("/WEB-INF/view/admin/manage/news.jsp").forward(request,response);

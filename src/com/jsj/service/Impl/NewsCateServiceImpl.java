@@ -23,7 +23,7 @@ public class NewsCateServiceImpl implements NewsCateService {
     public List<NewsCate> getAllCate() {
         try {
             return newsCateDao.getAll();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -41,7 +41,7 @@ public class NewsCateServiceImpl implements NewsCateService {
                 allNewsCateVo.add(newsCateVo);
             }
             return allNewsCateVo;
-        }catch (SQLException e){
+        }catch (Exception e){
             return null;
         }
     }
@@ -50,7 +50,7 @@ public class NewsCateServiceImpl implements NewsCateService {
     public NewsCate getNewsCateById(Integer id) {
         try {
             return newsCateDao.getById(id);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -59,7 +59,7 @@ public class NewsCateServiceImpl implements NewsCateService {
     public int insert(NewsCate newsCate) {
         try {
             return newsCateDao.insert(newsCate);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return -1;
         }
     }
@@ -68,7 +68,7 @@ public class NewsCateServiceImpl implements NewsCateService {
     public int update(NewsCate newsCate) {
         try {
             return newsCateDao.update(newsCate);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return -1;
         }
     }
@@ -90,15 +90,15 @@ public class NewsCateServiceImpl implements NewsCateService {
             }
             JdbcUtils.commitTransaction();
             return res;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             try {
                 JdbcUtils.rollbackTransaction();
                 return 0;
-            } catch (SQLException ignored) {}
+            } catch (Exception ignored) {}
         }
         try {
             return newsCateDao.deleteById(id);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return -1;
         }
     }

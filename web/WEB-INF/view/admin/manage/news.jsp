@@ -36,7 +36,7 @@
                     <ul class="pagination">
                         <%--如果当前页面为第一页时，上一页按钮禁用--%>
                         <c:choose>
-                            <c:when test="${requestScope.newsVoPage.pageIndex eq 1}">
+                            <c:when test="${empty requestScope.newsPage.pageIndex || requestScope.newsVoPage.pageIndex <= 1}">
                                 <li class="page-item disabled" data-toggle="tooltip" data-placement="left" title="没有上一页了">
                                     <a class="page-link" aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
@@ -58,7 +58,7 @@
                         </c:forEach>
                         <%--如果当前页面为最后一页时，下一页按钮禁用--%>
                         <c:choose>
-                            <c:when test="${requestScope.newsVoPage.pageIndex >= requestScope.newsVoPage.totalPage}">
+                            <c:when test="${empty requestScope.newsPage.pageIndex || requestScope.newsVoPage.pageIndex >= requestScope.newsVoPage.totalPage}">
                                 <li class="page-item disabled" data-toggle="tooltip" data-placement="left" title="没有下一页了">
                                     <a class="page-link" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
@@ -68,7 +68,7 @@
                             </c:when>
                             <c:otherwise>
                                 <li class="page-item">
-                                    <a class="page-link" href="${pageContext.request.contextPath}/admin/manage/news?pageIndex=${requestScope.newsPage.pageIndex+1}" aria-label="Next">
+                                    <a class="page-link" href="${pageContext.request.contextPath}/admin/manage/news?pageIndex=${requestScope.newsVoPage.pageIndex+1}" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
                                         <span class="sr-only">Next</span>
                                     </a>

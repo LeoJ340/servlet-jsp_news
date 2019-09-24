@@ -28,8 +28,14 @@ public class NewsCateServlet extends HttpServlet {
         Integer cateId = Integer.valueOf(request.getParameter("cateId"));
         NewsCate newsCate = newsCateService.getNewsCateById(cateId);
         request.setAttribute("cate",newsCate);
-        int pageIndex = request.getParameter("pageIndex")!=null?Integer.valueOf(request.getParameter("pageIndex")):1;
-        int pageSize = request.getParameter("pageSize")!=null?Integer.valueOf(request.getParameter("pageSize")):10;
+        int pageIndex = 1;
+        if (request.getParameter("pageIndex") != null){
+            pageIndex = Integer.valueOf(request.getParameter("pageIndex")) < 1 ? 1 : Integer.valueOf(request.getParameter("pageIndex"));
+        }
+        int pageSize = 10;
+        if (request.getParameter("pageSize") != null){
+            pageSize = Integer.valueOf(request.getParameter("pageSize")) < 1 ? 10 : Integer.valueOf(request.getParameter("pageSize"));
+        }
         Page<News> newsPage = newsService.getNewsPageByCate(cateId,pageIndex,pageSize);
         request.setAttribute("newsPage", newsPage);
         request.getRequestDispatcher("/WEB-INF/view/newsCate.jsp").forward(request,response);

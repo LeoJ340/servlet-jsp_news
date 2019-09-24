@@ -5,8 +5,6 @@ import com.jsj.entity.Admin;
 import com.jsj.factory.DaoFactory;
 import com.jsj.service.AdminService;
 
-import java.sql.SQLException;
-
 public class AdminServiceImpl implements AdminService {
 
     private AdminDao adminDao = (AdminDao) DaoFactory.getDao("AdminDao");
@@ -15,7 +13,7 @@ public class AdminServiceImpl implements AdminService {
     public Admin login(String username, String password) {
         try {
             return adminDao.getAdminByPassword(username, password);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return null;
         }
     }
