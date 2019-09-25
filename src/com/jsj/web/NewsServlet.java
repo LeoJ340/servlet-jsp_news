@@ -22,11 +22,20 @@ public class NewsServlet extends HttpServlet {
     private NewsCateService newsCateService = (NewsCateService) ServiceFactory.getService("NewsCateService");
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<NewsCate> allCate = newsCateService.getAllCate();
-        request.setAttribute("allCate",allCate);
-        Integer newsId = Integer.valueOf(request.getParameter("newsId"));
-        News news = newsService.getNewsById(newsId);
-        request.setAttribute("news",news);
-        request.getRequestDispatcher("/WEB-INF/view/news.jsp").forward(request,response);
+        try {
+            int newsId = Integer.valueOf(request.getParameter("newsId"));
+            News news = newsService.getNewsById(newsId);
+            if (news == null){
+                request.getRequestDispatcher("/WEB-INF/view/error/error.jsp").forward(request, response);
+            }else {
+                request.setAttribute("news",news);
+                List<NewsCate> allCate = newsCateService.getAllCate();
+                request.setAttribute("allCate",allCate);
+                request.getRequestDispatcher("/WEB-INF/view/news.jsp").forward(request,response);
+            }
+        }catch (Exception e){
+            request.getRequestDispatcher("/WEB-INF/view/error/error.jsp").forward(request, response);
+        }
+
     }
 }

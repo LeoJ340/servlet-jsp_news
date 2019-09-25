@@ -50,7 +50,14 @@
                     </c:otherwise>
                 </c:choose>
                 <c:forEach var="pageIndex" begin="1" end="${requestScope.newsPage.totalPage}">
-                    <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/newsCate?cateId=${requestScope.cate.id}&pageIndex=${pageIndex}">${pageIndex}</a></li>
+                    <c:choose>
+                        <c:when test="${pageIndex eq requestScope.newsPage.pageIndex}">
+                            <li class="page-item active"><a class="page-link" href="${pageContext.request.contextPath}/newsCate?cateId=${requestScope.cate.id}&pageIndex=${pageIndex}">${pageIndex}</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/newsCate?cateId=${requestScope.cate.id}&pageIndex=${pageIndex}">${pageIndex}</a></li>
+                        </c:otherwise>
+                    </c:choose>
                 </c:forEach>
                 <%--如果当前页面为最后一页时，下一页按钮禁用--%>
                 <c:choose>

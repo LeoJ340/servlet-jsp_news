@@ -23,21 +23,27 @@ public class NewsCateServlet extends HttpServlet {
     private NewsCateService newsCateService = (NewsCateService) ServiceFactory.getService("NewsCateService");
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<NewsCate> allCate = newsCateService.getAllCate();
-        request.setAttribute("allCate",allCate);
-        Integer cateId = Integer.valueOf(request.getParameter("cateId"));
-        NewsCate newsCate = newsCateService.getNewsCateById(cateId);
-        request.setAttribute("cate",newsCate);
-        int pageIndex = 1;
-        if (request.getParameter("pageIndex") != null){
-            pageIndex = Integer.valueOf(request.getParameter("pageIndex")) < 1 ? 1 : Integer.valueOf(request.getParameter("pageIndex"));
+        try {
+            int cateId = Integer.valueOf(request.getParameter("cateId"));
+            NewsCate newsCate = newsCateService.getNewsCateById(cateId);
+            if (newsCate == null){
+                request.getRequestDispatcher("/WEB-INF/view/error/error.jsp").forward(request, response);
+            }else {
+                int pageIndex = request.getParameter("pageIndex") == null ? 1 : Integer.valueOf(request.getParameter("pageIndex"));
+                int pageSize = 10;
+                Page<News> newsPage = newsService.getNewsPageByCate(cateId,pageIndex,pageSize);
+                if (newsPage.getBeanList() == null || newsPage.getBeanList().size() == 0){
+                    request.getRequestDispatcher("/WEB-INF/view/error/error.jsp").forward(request, response);
+                }
+                request.setAttribute("newsPage", newsPage);
+                request.setAttribute("cate",newsCate);
+                List<NewsCate> allCate = newsCateService.getAllCate();
+                request.setAttribute("allCate",allCate);
+                request.getRequestDispatcher("/WEB-INF/view/newsCate.jsp").forward(request,response);
+            }
+        }catch (Exception e){
+            request.getRequestDispatcher("/WEB-INF/view/error/error.jsp").forward(request, response);
         }
-        int pageSize = 10;
-        if (request.getParameter("pageSize") != null){
-            pageSize = Integer.valueOf(request.getParameter("pageSize")) < 1 ? 10 : Integer.valueOf(request.getParameter("pageSize"));
-        }
-        Page<News> newsPage = newsService.getNewsPageByCate(cateId,pageIndex,pageSize);
-        request.setAttribute("newsPage", newsPage);
-        request.getRequestDispatcher("/WEB-INF/view/newsCate.jsp").forward(request,response);
+
     }
 }
