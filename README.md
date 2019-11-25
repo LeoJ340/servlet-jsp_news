@@ -21,6 +21,34 @@
         新闻管理：对新闻文章数据进行删除操作。
 本项目仅仅是做了文章相关信息的简单增删改查和用户权限的控制，没有啥复杂的功能，所以没有什么好解释的了（捂脸，溜。。）<br/>
 后续有时间的话还会继续进行扩展和优化。
+### 项目结构
+    ├── README.md 
+    ├── config  -- 项目资源文件
+    |      ├── news_table.sql 项目数据库创建和表创建的SQL语句
+    |      ├── c3p0-config.xml c3p0连接池配置文件
+    |      ├── dao.properties 
+    |      ├── service.properties
+    └── src
+    |    └── com
+    |        └── jsj
+    |             ├── servlet  web层
+    |             ├── dao  -- dao持久层
+    |             ├── entity  -- 实体类
+    |             ├── factory  -- 工厂类
+    |             ├── filter  -- 过滤器
+    |             ├── utils  -- 工具类
+    |             └── service  -- service业务层
+    └── web -- web前端
+         └── WEB-INF
+         |      ├── lib  -- 项目相关依赖
+         |      ├── view  -- 存放视图页面目录
+         |      └── web.xml  -- web部署文件
+         └── static
+                ├── bootstrap-4.3.1-dist  -- bootstrap依赖文件
+                ├── wangEditor  -- 富文本编辑器依赖文件
+                ├── css  -- 样式文件
+                ├── images  -- 图片文件
+                └── js  -- javascript脚本文件
 ### 结果展示
 #### 首页：
 ![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/index.png)
