@@ -1,7 +1,7 @@
 # 基于servlet&jsp及原生jdbc开发的新闻系统项目
-本项目采用wangEditor富文本编辑器实现的文章发布的新闻系统，同时有前台展示。
+本项目采用[wangEditor富文本编辑器](http://www.wangeditor.com/)实现的文章发布的新闻系统，同时有前台展示。
 文章发布不提供图片上传，因此新闻文章内容是纯文本的。
-项目中的登录、后台等部分页面UI使用bootstrap官方提供的模板。<br/>
+项目中的登录、后台等部分页面UI使用[bootstrap](http://bs4.vx.link/)官方提供的模板。<br/>
 **注：** 该项目主要是本人为了复习JavaWeb知识而写的小项目。如果你正在学习JavaWeb或者需要练手的项目，那么这个项目应该会对你有帮助。<br/>
 ### 项目环境
     Java环境：jdk1.8+
@@ -27,7 +27,7 @@
     |      ├── news_table.sql 项目数据库创建和表创建的SQL语句
     |      ├── c3p0-config.xml c3p0连接池配置文件
     |      ├── dao.properties 
-    |      ├── service.properties
+    |      └── service.properties
     └── src
     |    └── com
     |        └── jsj
@@ -38,10 +38,10 @@
     |             ├── filter  -- 过滤器
     |             ├── utils  -- 工具类
     |             └── service  -- service业务层
-    └── web -- web前端
+    └── web
          └── WEB-INF
          |      ├── lib  -- 项目相关依赖
-         |      ├── view  -- 存放视图页面目录
+         |      ├── view  -- 视图页面目录
          |      └── web.xml  -- web部署文件
          └── static
                 ├── bootstrap-4.3.1-dist  -- bootstrap依赖文件
@@ -51,14 +51,14 @@
                 └── js  -- javascript脚本文件
 ### 结果展示
 #### 首页：
-![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/index.png)
+![Image text](https://github.com/Lionel340/servlet-jsp_news/blob/master/md_image/index.png)
 #### 新闻分类列表：
-![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/newslist.png)
+![Image text](https://github.com/Lionel340/servlet-jsp_news/blob/master/md_image/newslist.png)
 #### 新闻详细页面
-![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/news.png)
+![Image text](https://github.com/Lionel340/servlet-jsp_news/blob/master/md_image/news.png)
 #### 管理中心发表新闻文章页面
-![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/publish.png)
+![Image text](https://github.com/Lionel340/servlet-jsp_news/blob/master/md_image/publish.png)
 #### 新闻管理中心
-![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/newsManage.png)
+![Image text](https://github.com/Lionel340/servlet-jsp_news/blob/master/md_image/newsManage.png)
 #### 新闻分类管理中心
-![Image text](https://github.com/JsjCode/servlet-jsp_news/blob/master/md_image/newsCateManage.png)
+![Image text](https://github.com/Lionel340/servlet-jsp_news/blob/master/md_image/newsCateManage.png)
