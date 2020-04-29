@@ -1,17 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="servlet&amp;jsp-news:war exploded">
+  <artifact type="exploded-war" name="servlet-jsp_news:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/servlet_jsp_news_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="servlet&amp;jsp-news/web/Web" />
+      <element id="javaee-facet-resources" facet="servlet-jsp_news/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="servlet&amp;jsp-news" />
-        </element>
-        <element id="directory" name="lib">
-          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jstl-1.2.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/c3p0-0.9.5.4.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/mchange-commons-java-0.2.15.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-8.0.13.jar" />
+          <element id="module-output" name="servlet-jsp_news" />
         </element>
       </element>
     </root>

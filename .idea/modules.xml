@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/servlet&amp;jsp-news.iml" filepath="$PROJECT_DIR$/servlet&amp;jsp-news.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/servlet-jsp_news.iml" filepath="$PROJECT_DIR$/.idea/servlet-jsp_news.iml" />
     </modules>
   </component>
 </project>
