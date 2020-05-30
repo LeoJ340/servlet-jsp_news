@@ -50,7 +50,7 @@ public class PublishNewsServlet extends HttpServlet {
             }else {
                 out.println("新闻发表失败");
             }
-            response.setHeader("refresh", "2;url=/admin/manage");
+            response.setHeader("refresh", "2;url="+request.getContextPath()+"/admin/manage");
         }
     }
 

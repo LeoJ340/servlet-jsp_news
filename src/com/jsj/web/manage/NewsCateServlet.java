@@ -38,7 +38,7 @@ public class NewsCateServlet extends HttpServlet {
                 //删除分类
                 delete(request, out);
             }
-            response.setHeader("refresh", "2;url=/admin/manage/newsCate");
+            response.setHeader("refresh", "2;url="+request.getContextPath()+"/admin/manage/newsCate");
         }
     }
 

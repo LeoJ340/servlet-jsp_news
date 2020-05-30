@@ -34,11 +34,11 @@ public class RegisterServlet extends HttpServlet {
             user.setTelNumber(request.getParameter("telNumber"));
             int res = userService.register(user);
             if (res>0){
-                out.println("注册成功，3秒后跳转到首页！或现在去<a href='/login'>登录</a>");
-                response.setHeader("refresh", "2;url=/");
+                out.println("注册成功，3秒后跳转到首页！或现在去<a href='"+request.getContextPath()+"/login'>登录</a>");
+                response.setHeader("refresh", "2;url="+request.getContextPath()+"/");
             }else {
-                out.println("注册失败!请<a href='/register'>重试</a>重试");
-                response.setHeader("refresh", "2;url=/register");
+                out.println("注册失败!请<a href='"+request.getContextPath()+"/register'>重试</a>");
+                response.setHeader("refresh", "2;url="+request.getContextPath()+"/register");
             }
         }
     }

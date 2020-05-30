@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="mininews">
+    <output-path>$PROJECT_DIR$/out/artifacts/mininews</output-path>
+    <root id="archive" name="mininews.war">
+      <element id="artifact" artifact-name="servlet-jsp_news:war exploded" />
+    </root>
+  </artifact>
+</component>

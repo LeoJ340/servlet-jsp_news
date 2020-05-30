@@ -23,7 +23,7 @@ public class NewsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            int newsId = Integer.valueOf(request.getParameter("newsId"));
+            int newsId = Integer.parseInt(request.getParameter("newsId"));
             News news = newsService.getNewsById(newsId);
             if (news == null){
                 request.getRequestDispatcher("/WEB-INF/view/error/error.jsp").forward(request, response);

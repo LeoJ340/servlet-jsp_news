@@ -20,7 +20,7 @@ public class AdminFilter implements Filter {
             filterChain.doFilter(servletRequest, servletResponse);
         else {
             response.setContentType("text/html;charset=UTF-8");
-            response.getWriter().println("您不是管理员，无权访问该资源！请进行<a href='/admin'>管理员登录</a>");
+            response.getWriter().println("您不是管理员，无权访问该资源！请进行<a href='"+request.getContextPath()+"/admin'>管理员登录</a>");
         }
     }
 

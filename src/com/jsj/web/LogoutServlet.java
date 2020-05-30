@@ -20,7 +20,7 @@ public class LogoutServlet extends HttpServlet {
             request.getSession().removeAttribute("adminStatus");
             request.getSession().removeAttribute("admin");
         }
-        response.getWriter().println("注销成功，3秒后跳转到首页！如果没有跳转请点<a href='/'>这里</a>");
+        response.getWriter().println("注销成功，3秒后跳转到首页！如果没有跳转请点<a href='"+request.getContextPath()+"/'>这里</a>");
         response.setHeader("refresh", "2;url=/");
     }
 }

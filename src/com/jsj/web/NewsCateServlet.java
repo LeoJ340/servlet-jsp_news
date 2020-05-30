@@ -24,12 +24,12 @@ public class NewsCateServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            int cateId = Integer.valueOf(request.getParameter("cateId"));
+            int cateId = Integer.parseInt(request.getParameter("cateId"));
             NewsCate newsCate = newsCateService.getNewsCateById(cateId);
             if (newsCate == null){
                 request.getRequestDispatcher("/WEB-INF/view/error/error.jsp").forward(request, response);
             }else {
-                int pageIndex = request.getParameter("pageIndex") == null ? 1 : Integer.valueOf(request.getParameter("pageIndex"));
+                int pageIndex = request.getParameter("pageIndex") == null ? 1 : Integer.parseInt(request.getParameter("pageIndex"));
                 int pageSize = 10;
                 Page<News> newsPage = newsService.getNewsPageByCate(cateId,pageIndex,pageSize);
                 if (newsPage.getBeanList() == null || newsPage.getBeanList().size() == 0){

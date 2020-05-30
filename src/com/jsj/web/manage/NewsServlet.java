@@ -20,7 +20,7 @@ public class NewsServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{
-            int pageIndex = request.getParameter("pageIndex") == null ? 1 : Integer.valueOf(request.getParameter("pageIndex"));
+            int pageIndex = request.getParameter("pageIndex") == null ? 1 : Integer.parseInt(request.getParameter("pageIndex"));
             int pageSize = 10;
             Page<NewsVo> newsVoPage = newsService.getNewsVoPage(pageIndex,pageSize);
             if (newsVoPage.getBeanList() == null || newsVoPage.getBeanList().size() == 0){
@@ -49,7 +49,7 @@ public class NewsServlet extends HttpServlet {
             }else {
                 out.println("新闻删除失败");
             }
-            response.setHeader("refresh", "2;url=/admin/manage/news");
+            response.setHeader("refresh", "2;url="+request.getContextPath()+"/admin/manage/news");
         }
     }
 
