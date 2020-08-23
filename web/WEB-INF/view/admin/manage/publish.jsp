@@ -17,8 +17,10 @@
         <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex flex-column pt-3 pb-5 mb-3">
                 <form method="post" action="${pageContext.request.contextPath}/admin/manage/publish">
-                    <input type="text" maxlength="50" placeholder="请输入标题" class="w-100 pl-3 mt-3 mb-3 title" name="title" />
-                    <div id="contentEidtor"></div>
+                    <input hidden value="${requestScope.news.id}" name="id">
+                    <input type="text" maxlength="50" placeholder="请输入标题" class="w-100 pl-3 mt-3 mb-3 title" name="title"
+                           value="${requestScope.news.title}" />
+                    <div id="contentEidtor">${requestScope.news.content}</div>
                     <textarea name="content" id="content" style="display:none;"></textarea>
                     新闻分类：
                     <label>
@@ -28,6 +30,9 @@
                             </c:forEach>
                         </select>
                     </label>
+                    <c:if test="${not empty requestScope.isEdit}">
+                        <input hidden value="${requestScope.isEdit}" name="isEdit"/>
+                    </c:if>
                     <br />
                     <button type="submit" name="method" value="publish" class="mt-3 btn btn-danger">发表</button>
                 </form>

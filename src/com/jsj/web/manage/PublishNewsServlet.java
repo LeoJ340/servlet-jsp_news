@@ -44,13 +44,34 @@ public class PublishNewsServlet extends HttpServlet {
             news.setCateId(Integer.valueOf(request.getParameter("cate")));
             news.setTime(new Date());
             news.setContent(request.getParameter("content"));
-            int res = newsService.publish(news);
-            if (res>0){
-                out.println("新闻发表成功");
+
+            boolean isEdit;
+            try {
+                isEdit = Boolean.parseBoolean(request.getParameter("isEdit"));
+            }catch (Exception e){
+                isEdit = false;
+            }
+
+            if (isEdit){
+                // 更新
+                news.setId(Integer.valueOf(request.getParameter("id")));
+                int res = newsService.update(news);
+                if (res>0){
+                    out.println("修改成功");
+                }else {
+                    out.println("修改失败");
+                }
             }else {
-                out.println("新闻发表失败");
+                // 新增
+                int res = newsService.publish(news);
+                if (res>0){
+                    out.println("新闻发表成功");
+                }else {
+                    out.println("新闻发表失败");
+                }
             }
             response.setHeader("refresh", "2;url="+request.getContextPath()+"/admin/manage");
+
         }
     }
 

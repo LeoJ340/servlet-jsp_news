@@ -20,7 +20,7 @@ public interface NewsService {
 
     int publish(News news);
 
-    List<NewsVo> getAllNewsVo();
-
     int deleteNewsById(Integer id);
+
+    int update(News news);
 }

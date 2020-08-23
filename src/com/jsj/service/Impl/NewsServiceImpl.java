@@ -97,31 +97,18 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public List<NewsVo> getAllNewsVo() {
-        List<NewsVo> allNewsVo = new ArrayList<>();
+    public int deleteNewsById(Integer id) {
         try {
-            List<News> allNews = newsDao.getAll();
-            for (News news:allNews) {
-                NewsVo newsVo = new NewsVo();
-                newsVo.setId(news.getId());
-                newsVo.setTitle(news.getTitle());
-                newsVo.setAuthor(news.getAuthor());
-                newsVo.setTime(news.getTime());
-                newsVo.setContent(news.getContent());
-                newsVo.setCateId(news.getCateId());
-                newsVo.setNewsCate(newsCateDao.getById(news.getCateId()));
-                allNewsVo.add(newsVo);
-            }
-            return allNewsVo;
+            return newsDao.deleteById(id);
         } catch (Exception e) {
-            return null;
+            return -1;
         }
     }
 
     @Override
-    public int deleteNewsById(Integer id) {
+    public int update(News news) {
         try {
-            return newsDao.deleteById(id);
+            return newsDao.update(news);
         } catch (Exception e) {
             return -1;
         }

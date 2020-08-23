@@ -1,5 +1,7 @@
 package com.jsj.entity;
 
+import java.util.Objects;
+
 public class NewsCate {
 
     private Integer id;
@@ -22,4 +24,12 @@ public class NewsCate {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NewsCate newsCate = (NewsCate) o;
+        return id.equals(newsCate.id) &&
+                name.equals(newsCate.name);
+    }
 }

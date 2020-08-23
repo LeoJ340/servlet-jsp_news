@@ -59,4 +59,10 @@ public class NewsDaoImpl implements NewsDao {
         String sql = "delete from news where id = ?";
         return JdbcTemplate.update(sql, id);
     }
+
+    @Override
+    public int update(News news) throws Exception {
+        String sql = "update news set title = ? , content = ? , cate_id = ? , time = ? where id = ?";
+        return JdbcTemplate.update(sql,news.getTitle(),news.getContent(),news.getCateId(),news.getTime(),news.getId());
+    }
 }

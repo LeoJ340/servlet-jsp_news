@@ -26,7 +26,9 @@
                                 <div class="row pl-3 pr-3">
                                     <span class="pt-2 time">${newsVo.time}</span>
                                     <span class="ml-2 pt-2 author">${newsVo.author}</span>
-                                    <button type="submit" class="ml-auto btn btn-danger btn-sm" name="id" value="${newsVo.id}">删除</button>
+                                    <a href="${pageContext.request.contextPath}/admin/manage/news?newsId=${newsVo.id}"
+                                       class="ml-auto btn btn-outline-primary btn-sm">编辑</a>
+                                    <button type="submit" class="btn btn-danger btn-sm" name="id" value="${newsVo.id}">删除</button>
                                 </div>
                             </form>
                         </li>
